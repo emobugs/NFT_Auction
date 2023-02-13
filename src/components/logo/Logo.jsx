@@ -1,5 +1,5 @@
-import logo,{src} from "../../public/images/logo.svg"
-import logoMuted from "../../public/images/logo-muted.svg"
+import logo from "../../../public/images/logo.svg"
+import logoMuted from "../../../public/images/logo-muted.svg"
 
 function Logo ({type = 'default'}) {
     

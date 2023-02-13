@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Logo from '../src/components/Logo'
+import Logo from '../src/components/logo/Logo'
 import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -20,7 +20,7 @@ export default function MyApp(props) {
         <title>My page</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Logo type='muted'/>
+      <Logo type=''/>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
