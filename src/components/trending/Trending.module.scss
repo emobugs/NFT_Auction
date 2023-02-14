@@ -1,5 +1,9 @@
 @use '../../styles/colors';
 
+.container{
+    background-color: colors.$background_default;
+}
+
 .trending{
     width: 100% !important;
     padding-top: 2rem;
