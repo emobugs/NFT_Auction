@@ -1,7 +1,6 @@
 import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container";
 import Link from "../link/Link";
-// import Header from "../header/Header";
 import styles from "./Example.module.scss";
 import classNames from "classnames";
 

@@ -1,12 +1,12 @@
 @use '../../styles/colors.scss';
 
-.logo svg path{
-    fill: red;
+.wrapper{
+    background-color: colors.$background_paper !important;
+    padding: 10px !important;
 }
 
 .search-input{
     background-color: colors.$background_default;
-    color: red;
     font-size: 30px;
 }
 
@@ -17,4 +17,13 @@
     height: 45px;
     padding: 10px !important;
     background-color: colors.$background_default;
+}
+
+.btn-nav{
+    color: colors.$text_secondary !important;
+    
+    &-exp{
+        background-color: colors.$primary_main !important;
+        color: colors.$text_primary !important;
+    }
 }

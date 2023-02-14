@@ -1,6 +1,5 @@
 import Logo from "../logo/Logo";
 import styles from "./Header.module.scss";
-import classNames from "classnames";
 
 import { Grid, TextField, InputAdornment, Button, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -13,8 +12,6 @@ export default function Header() {
           <Logo className={styles.logo} />
         </Grid>
         <Grid item md={4}>
-          {/* <input          type="text"name="search"id="search-input"          className={classNames(styles['search-input2'])} placeholder="Find items, users and activities" /> */}
-          {/* input field*/}
           <TextField
             id="input-search"
             placeholder="Find items, users and activities"
@@ -36,9 +33,9 @@ export default function Header() {
           flexDirection="row"
           className={styles.container}
         >
-            <Button>Home</Button>
-            <Button>Activity</Button>
-            <Button>Explore</Button>
+          <Button className={styles['btn-nav']}>Home</Button>
+          <Button className={styles['btn-nav']}>Activity</Button>
+          <Button variant="contained" className={styles['btn-nav','btn-nav-exp']}>Explore</Button>
         </Grid>
       </Grid>
     </div>

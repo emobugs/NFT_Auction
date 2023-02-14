@@ -1,5 +1,4 @@
 @use "../../styles/colors";
-@use '../header/Header.module.scss';
 
 
 .wrapper {
@@ -20,8 +19,4 @@
   position: relative;
   top: 180px;
   text-align: center;
-}
-
-.red{
-  color: red;
 }
