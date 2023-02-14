@@ -24,8 +24,8 @@ export default function Card({
       <img src={mediaUrl} alt="NFT image" className={styles.media} />
       <div className={styles.info}>
         <h2 className={styles.title}>{name}</h2>
-        <p className={styles.price}>~{price}{currency}</p>
-        <Chip variant="outlined" label={millify(likes, { precision: 1 })} className={styles.likes}/>
+        <p className={styles.price}>~{price} {currency}</p>
+        <Chip variant="outlined" label={millify(likes)} className={styles.likes}/>
       </div>
     </CardMui>
   );
