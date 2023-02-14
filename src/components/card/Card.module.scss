@@ -1,3 +1,5 @@
+@use "../../styles/colors";
+
 .card{
     padding: 1rem !important;
     width: 400px ;
@@ -16,4 +18,12 @@
 
 .media{
     border-radius: 5%;
+}
+
+.price{
+    color: colors.$secondary_main;
+}
+
+.likes{
+    color: colors.$secondary_main;
 }
