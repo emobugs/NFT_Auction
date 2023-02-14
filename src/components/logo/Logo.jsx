@@ -1,7 +1,7 @@
 import logo from "../../../public/images/logo.svg"
 import logoMuted from "../../../public/images/logo-muted.svg"
 
-function Logo ({type = 'default'}) {
+export default function Logo ({type = 'default'}) {
     
     return(
         <div>
@@ -15,5 +15,3 @@ function Logo ({type = 'default'}) {
         </div>
     )
 }
-
-export default Logo;
