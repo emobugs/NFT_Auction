@@ -13,10 +13,10 @@ export default function Card({
     avatar: {
       url: "String",
     },
-    verified: "Boolean",
+    verified: false,
   },
   price = 5,
-  currency = "ETH",
+  currency = "",
 }) {
   return (
     <CardMui className={styles.card}>
@@ -25,7 +25,7 @@ export default function Card({
       <div className={styles.info}>
         <h2 className={styles.title}>{name}</h2>
         <p className={styles.price}>~{price} {currency}</p>
-        <Chip variant="outlined" label={millify(likes)} className={styles.likes}/>
+        <Chip label={millify(likes)} className={styles.likes}/>
       </div>
     </CardMui>
   );
