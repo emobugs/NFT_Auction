@@ -7,7 +7,7 @@ import Avatar from "../avatar/Avatar";
 
 export default function Card({
   name = "String",
-  likes = "Number",
+  likes = 0,
   mediaUrl = "String",
   user = {
     avatar: {
@@ -15,8 +15,8 @@ export default function Card({
     },
     verified: "Boolean",
   },
-  price = "String",
-  currency = "String",
+  price = 5,
+  currency = "ETH",
 }) {
   return (
     <CardMui className={styles.card}>
@@ -24,8 +24,8 @@ export default function Card({
       <img src={mediaUrl} alt="NFT image" className={styles.media} />
       <div className={styles.info}>
         <h2 className={styles.title}>{name}</h2>
-        <p className={styles.price}>{price}</p>
-        <Chip variant="outlined" label={millify(likes, { precision: 1 })} />
+        <p className={styles.price}>~{price}{currency}</p>
+        <Chip variant="outlined" label={millify(likes, { precision: 1 })} className={styles.likes}/>
       </div>
     </CardMui>
   );
