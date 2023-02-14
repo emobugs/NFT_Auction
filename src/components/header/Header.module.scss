@@ -1,0 +1,20 @@
+@use '../../styles/colors.scss';
+
+.logo svg path{
+    fill: red;
+}
+
+.search-input{
+    background-color: colors.$background_default;
+    color: red;
+    font-size: 30px;
+}
+
+
+.TextField{
+    width: 100%;
+    border-radius: 25px;
+    height: 45px;
+    padding: 10px !important;
+    background-color: colors.$background_default;
+}
