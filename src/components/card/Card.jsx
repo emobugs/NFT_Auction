@@ -20,12 +20,14 @@ export default function Card({
 }) {
   return (
     <CardMui className={styles.card}>
-      <Avatar url="./images/avatar.png" size={80} className={styles.avatar} />
+      <Avatar url={user.avatar.url} className={styles.avatar} />
       <img src={mediaUrl} alt="NFT image" className={styles.media} />
       <div className={styles.info}>
+        <div className={styles['basic-info']}>
         <h2 className={styles.title}>{name}</h2>
         <p className={styles.price}>~{price} {currency}</p>
-        <Chip label={millify(likes)} className={styles.likes}/>
+        </div>
+        <Chip variant="outlined" label={millify(likes)} className={styles.likes}/>
       </div>
     </CardMui>
   );

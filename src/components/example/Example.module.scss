@@ -2,18 +2,20 @@
 
 
 .wrapper {
-  padding: 100px;
+  width: 100% !important;
+  padding: 40px;
   background-color: colors.$primary_main;
 }
 
 .container {
+  width: 100% !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
 }
 
 .paper {
-  max-width: 350px;
+  // max-width: 350px;
   width: 100%;
   font-size: 10rem;
   position: relative;

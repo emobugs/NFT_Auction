@@ -2,7 +2,7 @@
 
 .card{
     padding: 1rem !important;
-    width: 400px ;
+    max-width: 300px ;
     display: flex !important;
     flex-direction: column !important;
 }
@@ -16,6 +16,12 @@
     flex-direction: row;
 }
 
+.basic-info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .media{
     border-radius: 5%;
 }
@@ -26,4 +32,6 @@
 
 .likes{
     color: colors.$secondary_main;
+    flex: 1;
+    align-self: flex-end;
 }
