@@ -10,7 +10,7 @@ export default function Header() {
     <div className={styles.wrapper}>
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item md={2}>
-          <Logo className={styles.logo}/>
+          <Logo className={styles.logo} />
         </Grid>
         <Grid item md={4}>
           {/* <input          type="text"name="search"id="search-input"          className={classNames(styles['search-input2'])} placeholder="Find items, users and activities" /> */}
@@ -36,15 +36,9 @@ export default function Header() {
           flexDirection="row"
           className={styles.container}
         >
-          <Grid item md={4}>
             <Button>Home</Button>
-          </Grid>
-          <Grid item md={4}>
             <Button>Activity</Button>
-          </Grid>
-          <Grid item md={4}>
             <Button>Explore</Button>
-          </Grid>
         </Grid>
       </Grid>
     </div>
