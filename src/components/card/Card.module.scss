@@ -1,0 +1,15 @@
+.card{
+    padding: 1rem !important;
+    width: 400px ;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.avatar{
+    margin-bottom: 1rem;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+}
