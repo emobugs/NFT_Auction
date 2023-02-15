@@ -6,7 +6,7 @@ const titles = ['Clock', 'DOGE','BTC', 'Litecoin'];
 
 export default function Trending({ cards = [] }) {
   return (
-    <Container className={styles.trending} sx={{ width: "100%", margin: 0 }}>
+    <Container className={styles.container} sx={{ width: "100%", margin: 0 }}>
       <div className={styles.top}>
       <h2 className={styles.heading}>Trending</h2>
       {/* Select component */}
