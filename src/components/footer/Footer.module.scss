@@ -1,7 +1,11 @@
 @use '../../styles/colors';
 
-.container{
+.wrapper{
     background-color: colors.$background_paper !important;
+    padding: 10px !important;
+}
+
+.container{
     text-align: center;
     display: flex !important;
     flex-direction: row !important;
