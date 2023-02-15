@@ -1,6 +1,6 @@
 import styles from "./Trending.module.scss";
 
-import { Container, Grid, FormControl, MenuItem, InputLabel, Select } from "@mui/material";
+import { Container, Grid, FormControl, MenuItem, Select } from "@mui/material";
 import Card from "../card/Card";
 const titles = ['Clock', 'DOGE','BTC', 'Litecoin'];
 
@@ -22,6 +22,8 @@ export default function Trending({ cards = [] }) {
         </Select>
       </FormControl>
       </div>
+      <Container>
+
       <Grid container display="flex" className={styles["grid-cnt"]}>
         {cards.map((card, i) => {
           return (
@@ -51,6 +53,7 @@ export default function Trending({ cards = [] }) {
                     <Card></Card>
                 </Grid> */}
       </Grid>
+      </Container>
     </Container>
   );
 }
