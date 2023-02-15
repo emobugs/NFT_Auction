@@ -9,12 +9,12 @@ export default function Footer() {
     <div className={styles.wrapper}>
     <Grid container className={styles.container}>
       <Grid item md={4}>
-        <Logo type="muted" />
+        <Logo className={styles.logo} type="muted" />
       </Grid>
       <Grid item md={4}>
         <p className={styles.text}>Emo All Aights Reserved 2023</p>
       </Grid>
-      <Grid item md={4}>
+      <Grid container item md={4}>
         <Button href="#" item md={6} className={styles.button}>
           Privacy Policy
         </Button>
