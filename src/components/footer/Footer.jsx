@@ -21,6 +21,9 @@ export default function Footer() {
           <Button href="#" item md={6} className={styles.button}>
             Cookie Policy
           </Button>
+          <Button href="#" item md={6} className={styles.button}>
+            Cookie Policy
+          </Button>
         </Grid>
       </Grid>
     </div>
