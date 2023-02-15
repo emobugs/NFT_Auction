@@ -12,13 +12,13 @@ export default function Trending({ cards = [] }) {
       {/* Select component */}
       <FormControl sx={{width: '300px' , marginLeft: 'auto'}}>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value="Today"
+          labelId="select"
+          id="select"
+          label="Today"
         >
-          <MenuItem value={20} selected>Today</MenuItem>
-          <MenuItem value={10}>This Month</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={1}>Today</MenuItem>
+          <MenuItem value={2}>This Week</MenuItem>
+          <MenuItem value={3}>This Month</MenuItem>
         </Select>
       </FormControl>
       </div>
@@ -33,6 +33,7 @@ export default function Trending({ cards = [] }) {
                 price={card.price}
                 likes={card.likes}
                 currency={card.currency}
+                title={titles[i]}
               ></Card>
             </Grid>
           );
