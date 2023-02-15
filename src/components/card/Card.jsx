@@ -6,6 +6,7 @@ import millify from "millify";
 import Avatar from "../avatar/Avatar";
 
 export default function Card({
+  title="",
   name = "String",
   likes = 0,
   mediaUrl = "String",
@@ -24,7 +25,7 @@ export default function Card({
       <img src={mediaUrl} alt="NFT image" className={styles.media} />
       <div className={styles.info}>
         <div className={styles['basic-info']}>
-        <h2 className={styles.title}>{name}</h2>
+        <h2 className={styles.title}>{title}</h2>
         <p className={styles.price}>~{price} {currency}</p>
         </div>
         <Chip variant="outlined" label={millify(likes)} className={styles.likes}/>
