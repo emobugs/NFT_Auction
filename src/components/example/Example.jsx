@@ -4,13 +4,13 @@ import Link from "../link/Link";
 import styles from "./Example.module.scss";
 import classNames from "classnames";
 
-import Trending from "../trending/Trending";
+// import Trending from "../trending/Trending";
 
 
 export default function Copyright() {
   return (
     <div className={classNames(styles.wrapper)}>
-      <Trending cards={
+      {/* <Trending cards={
    [
       {
          "name":"Ivy",
@@ -61,7 +61,7 @@ export default function Copyright() {
          "currency":"ETH"
       }
    ]
-}></Trending>
+}></Trending> */}
       <Container className={classNames(styles.container)} maxWidth="xl">
         <Paper className={classNames(styles.paper)}>
           <Link href="/about" color="secondary">  
