@@ -14,7 +14,6 @@ export default function Card({
   title = "",
   name = "String",
   likes = 0,
-  timeLeft = 0,
   mediaUrl = "String",
   user = {
     avatar: {
@@ -24,8 +23,8 @@ export default function Card({
   },
   price = 5,
   currency = "",
+  timeLeft = 0,
 }) {
-  const [live, setLive] = useState();
   const [liveClass, setLiveClass] = useState();
   const [liveBadge, setLiveBadge] = useState();
 
