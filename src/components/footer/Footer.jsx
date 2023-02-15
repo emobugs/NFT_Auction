@@ -8,18 +8,18 @@ export default function Footer() {
   return (
     <div className={styles.wrapper}>
       <Container className={styles.container}>
-        <Grid container alignItems='center'>
-          <Grid item md={4}>
+        <Grid container alignItems="center">
+          <Grid item md={4} className={styles.logoGrid}>
             <Logo className={styles.logo} type="muted" />
           </Grid>
-          <Grid item md={4} className={styles.grid}>
+          <Grid className={styles.inputGrid} item md={4}>
             <p className={styles.text}>Emo All Aights Reserved 2023</p>
           </Grid>
-          <Grid item md={4} className={styles.grid}>
-            <Button href="#" item md={6} className={styles.button}>
+          <Grid className={styles.buttonsGrid} item md={4} >
+            <Button className={styles.button}>
               Privacy Policy
             </Button>
-            <Button href="#" item md={6} className={styles.button}>
+            <Button className={styles.button}>
               Cookie Policy
             </Button>
           </Grid>
