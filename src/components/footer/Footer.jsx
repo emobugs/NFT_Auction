@@ -7,7 +7,7 @@ import { Grid, Button, Container } from "@mui/material";
 export default function Footer() {
   return (
     <div className={styles.wrapper}>
-    <Grid container className={styles.container}>
+    <Container className={styles.container}>
       <Grid item md={4}>
         <Logo className={styles.logo} type="muted" />
       </Grid>
@@ -22,7 +22,7 @@ export default function Footer() {
           Cookie Policy
         </Button>
       </Grid>
-    </Grid>
+    </Container>
     </div>
   );
 }
