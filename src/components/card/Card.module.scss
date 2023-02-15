@@ -1,41 +1,86 @@
 @use "../../styles/colors";
 
-.card{
-    padding: 1rem !important;
-    max-width: 300px ;
-    display: flex !important;
-    flex-direction: column !important;
+@mixin flex($dir){
+    display: flex;
+    flex-direction: $dir;
 }
 
-.avatar{
-    margin-bottom: 1rem;
+.card {
+  padding: 1rem !important;
+  max-width: 300px;
+  @include flex(column);
 }
 
-.info{
+.avatar {
+  margin-bottom: 1rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+}
+
+.basic-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.media {
+  border-radius: 5%;
+}
+
+.price {
+  color: colors.$secondary_main;
+}
+
+.likes {
+  color: colors.$secondary_main;
+  flex: 1;
+  align-self: flex-end;
+}
+
+.title {
+  color: colors.$text_primary;
+}
+
+// Live card styling
+
+@mixin live-elements{
+    background-color: colors.$secondary_main;
+    color: colors.$background_paper;
+    padding: 0 0.5rem;
+    border-radius: 5%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.live{
+    background: rgba(colors.$secondary_main, 0.7) !important;
+}
+
+.live-image-cnt {
+  position: relative;
+  & > .media {
+    width: 100%;
+  }
+  & > .badge {
     display: flex;
     flex-direction: row;
-}
+    align-items: center;
+    height: 15%;
+    column-gap: 0.3rem;
+    top: 5%;
+    left: 5%;
+    position: absolute !important;
+    @include live-elements();
+  } 
+  & .counter{
+    position: absolute;
+    bottom: 5%;
+    left: 50% ;
+    transform: translateX(-50%);
+   @include live-elements();
+  }
 
-.basic-info{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.media{
-    border-radius: 5%;
-}
-
-.price{
-    color: colors.$secondary_main;
-}
-
-.likes{
-    color: colors.$secondary_main;
-    flex: 1;
-    align-self: flex-end;
-}
-
-.title{
-    color: colors.$text_primary;
 }
