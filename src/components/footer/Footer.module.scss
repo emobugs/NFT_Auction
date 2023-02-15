@@ -1,0 +1,12 @@
+@use '../../styles/colors';
+
+.container{
+    text-align: center;
+}
+
+.text{
+    color: colors.$text_disabled;
+}
+.button{
+    color: colors.$text_secondary !important;
+}

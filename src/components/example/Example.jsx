@@ -5,11 +5,13 @@ import styles from "./Example.module.scss";
 import classNames from "classnames";
 
 import Auctions from "../auctions/Auctions";
+import Footer from "../footer/Footer";
 
 export default function Copyright() {
   return (
     <div className={classNames(styles.wrapper)}>
-   <Auctions cards = {[
+   <Footer></Footer>
+   {/* <Auctions cards = {[
       {
          "name":"Ivy",
          "user":{
@@ -57,7 +59,7 @@ export default function Copyright() {
          "mediaUrl":"images/nft.jpg",
          "price":10,
          "currency":"ETH"
-      }]}></Auctions>
+      }]}></Auctions> */}
       <Container className={classNames(styles.container)} maxWidth="xl">
         <Paper className={classNames(styles.paper)}>
           <Link href="/about" color="secondary">  
