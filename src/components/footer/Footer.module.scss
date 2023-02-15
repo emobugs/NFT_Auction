@@ -1,9 +1,11 @@
 @use '../../styles/colors';
 
 .container{
+    background-color: colors.$background_paper !important;
     text-align: center;
     display: flex !important;
     flex-direction: row !important;
+    align-items: center;
 }
 
 .text{
