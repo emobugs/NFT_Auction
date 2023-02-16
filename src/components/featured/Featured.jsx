@@ -1,17 +1,24 @@
-import "./Featured.module.scss";
+import styles from "./Featured.module.scss";
 
-import { Container, ImageList } from "@mui/material";
+import { Container, ImageList, ImageListItem } from "@mui/material";
 import { useRouter } from "next/router";
 
 export default function Featured({ items = [] }) {
+    const router = useRouter()
+
   return (
-    <div className={style.wrapper}>
-      <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+    <div className={styles.wrapper}>
+      <ImageList className={styles.imageList} sx={{ gridAutoFlow:"column"}} variant="quilted" cols={3} rowHeight={164}>
         {items.map((item) => (
-          <ImageListItem key={item.image} cols={item.cols || 1} rows={item.rows || 1}>
+          <ImageListItem className={styles.imageItem} key={item.image} cols={item.cols || 1} rows={item.rows || 1}>
             <img 
-            {...srcset(item.image, 164, item.rows, item.cols)}
-            src={item.image} alt={item.title} />
+            className={styles.image}
+            srcSet={[item.image, 120, item.rows, item.cols]}
+            // src={item.image} 
+            alt={item.title} 
+            loading = "lazy"
+            onClick={() => router.push(item.image)}
+            />
           </ImageListItem>
         ))}
       </ImageList>
