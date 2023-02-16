@@ -1,0 +1,36 @@
+@use '../../styles/colors';
+
+.wrapper{
+    background-color: colors.$background_default;
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 30vh;
+}
+
+.numberGrid{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: colors.$background_paper;
+}
+
+.number{
+    font-size: 2rem;
+    background-color: rgba(colors.$background_paper, 0.1);
+}
+
+.textGrid{
+    padding: 1rem;
+    background-color: colors.$background_default;
+    color: colors.$text_secondary;
+}
+
+.textGrid h3{
+}
+
+.textGrid p{
+    text-align: start;
+    font-size: 0.5rem;
+}

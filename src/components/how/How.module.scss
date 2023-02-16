@@ -1,0 +1,15 @@
+@use '../../styles/colors';
+
+.wrapper{
+    overflow: visible;
+}
+
+.container{
+    margin: auto;
+    background-color: colors.$primary_main;
+
+}
+
+.stepCnt{
+    margin-top: 10px !important;
+}
