@@ -9,12 +9,11 @@ export default function Featured({ items = [] }) {
   return (
     <div className={styles.wrapper}>
       <ImageList className={styles.imageList} sx={{ gridAutoFlow:"column"}} variant="quilted" cols={3} rowHeight={164}>
-        {items.map((item) => (
-          <ImageListItem className={styles.imageItem} key={item.image} cols={item.cols || 1} rows={item.rows || 1}>
+        {items.map((item, i) => (
+          <ImageListItem className={styles.imageItem} key={i} cols={item.cols || 1} rows={item.rows || 1}>
             <img 
             className={styles.image}
             srcSet={[item.image, 120, item.rows, item.cols]}
-            // src={item.image} 
             alt={item.title} 
             loading = "lazy"
             onClick={() => router.push(item.image)}
