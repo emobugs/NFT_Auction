@@ -7,9 +7,9 @@ import { Grid, Button, Container } from "@mui/material";
 export default function Footer() {
   return (
     <div className={styles.wrapper}>
-      <Container className={styles.container}>
+      <Container className={styles.container} maxWidth="false">
         <Grid container direction="row" alignItems="center" justifyContent="center">
-          <Grid item md={4} className={styles.logoGrid}>
+          <Grid className={styles.logoGrid} item md={4}>
             <Logo className={styles.logo} type="muted" />
           </Grid>
           <Grid className={styles.inputGrid} item md={4}>
