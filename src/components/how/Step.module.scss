@@ -5,32 +5,42 @@
     border-radius: 15px;
     overflow: hidden;
     max-height: 30vh;
+    width: 30vw;
+}
+
+.container{
+    // padding: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .numberGrid{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  
     box-sizing: border-box;
     padding: 10px;
     background-color: colors.$background_paper;
 }
 
 .number{
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: center;
+    vertical-align: middle;
     font-size: 2rem;
-    background-color: rgba(colors.$primary_main, 0.1);
+    background-color: rgba(colors.$primary_main, 10%);
 }
 
 .textGrid{
-    padding: 1rem;
     background-color: colors.$background_default;
     color: colors.$text_secondary;
+    text-align: start;
+    padding: 1rem;
 }
 
 .textGrid h3{
+    margin: 0;
 }
 
 .textGrid p{
-    text-align: start;
     font-size: 0.5rem;
 }

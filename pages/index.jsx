@@ -7,7 +7,7 @@ import Step from "../src/components/how/Step";
 export default function Index() {
   return (
     <div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
       {/* <How items = {
         [
           {
@@ -37,7 +37,14 @@ export default function Index() {
 
         ]
       }></How> */}
-      {/* <Step ></Step> */}
+      <Step
+                    number={1}
+                    title={"ela da vidish ti"}
+                    description= "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
+                    quo placeat et dolore quis blanditiis unde minima minus,
+                    voluptatem soluta porro numquam neque qui maxime. Id suscipit fuga
+                    cum non."
+                  ></Step>
     </div>
   );
 
