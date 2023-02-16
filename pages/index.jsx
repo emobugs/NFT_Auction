@@ -3,12 +3,38 @@ import Footer from "../src/components/footer/Footer";
 import Card from "../src/components/card/Card";
 import How from "../src/components/how/How";
 import Step from "../src/components/how/Step";
-import Featured from "../src/components/featured/Featured";
+// import Featured from "../src/components/featured/Featured";
+import CollectorsColumn from "../src/components/collectors/CollectorsColumn";
 
 export default function Index() {
   return (
     <div>
-      <Featured items = {
+      <CollectorsColumn
+        items={[
+          {
+            name: "emo",
+            nftsCount: 155,
+            avatar: "./images/avatar.png",
+            verified: true,
+            id: 1,
+          },
+          {
+            name: 'ivan',
+            nftsCount: 25,
+            avatar: './images/avatar.png',
+            verified: true,
+            id: 2
+          },
+          {
+            name: 'Sasho',
+            nftsCount: 6,
+            avatar: './images/avatar.png',
+            verified: true,
+            id: 3
+          }
+        ]}
+      ></CollectorsColumn>
+      {/* <Featured items = {
         [
           {
             image:
@@ -55,7 +81,7 @@ export default function Index() {
             href: "/about",
           },
         ]
-      }></Featured>
+      }></Featured> */}
       {/* <Footer></Footer> */}
       {/* <How items = {
         [
@@ -96,5 +122,4 @@ export default function Index() {
                   > </Step> */}
     </div>
   );
-
 }
