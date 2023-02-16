@@ -8,7 +8,9 @@ export default function Step({number, title, description}) {
     <div className={styles.wrapper}>
       <Grid className={styles.container} container direction="row" >
         <Grid className={styles.number} item md={4}>
+          <div>
           {number}
+          </div>
         </Grid>
         <Grid className={styles.textGrid} item md={8}>
             <h3>{title}</h3>

@@ -10,30 +10,25 @@
 
 .container{
     // padding: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.numberGrid{
-  
-    box-sizing: border-box;
-    padding: 10px;
-    background-color: colors.$background_paper;
+    // justify-content: center;
+    // align-items: center;
 }
 
 .number{
-    align-items: flex-end;
-    justify-content: flex-end;
-    text-align: center;
-    vertical-align: middle;
     font-size: 2rem;
     background-color: rgba(colors.$primary_main, 10%);
+}
+
+.number div{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .textGrid{
     background-color: colors.$background_default;
     color: colors.$text_secondary;
-    text-align: start;
     padding: 1rem;
 }
 
