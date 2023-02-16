@@ -1,3 +1,5 @@
+@use "../../styles/colors";
+
 $grid-gap: 0.5rem;
 
 .container{
@@ -5,11 +7,9 @@ $grid-gap: 0.5rem;
 }
 
 .imageList {
-  width: 100% !important;
-  height: 100%;
   gap: $grid-gap !important;
-  grid-template-columns: 1fr !important;
-  grid-template-rows: 1fr !important;
+  width: 100% !important;
+  grid-template-columns: repeat(3,1fr);
 }
 
 .imageItem{
@@ -17,15 +17,8 @@ $grid-gap: 0.5rem;
 }
 
 .image {
-  position: relative;
   border-radius: 15px !important;
   &:hover {
     opacity: 0.8 !important;
   }
-
-// .imageItem:nth-child(1){
-//     height: 100vh !important;
-//     grid-row: 1 span 2;
-//     // width: 600px !important;
-// }
 }

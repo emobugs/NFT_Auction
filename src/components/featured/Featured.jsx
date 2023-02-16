@@ -7,14 +7,13 @@ export default function Featured({ items = [] }) {
   const router = useRouter();
 
   return (
-    <div className={styles.wrapper}>
-      <Container className={styles.container}>
+      <Container className={styles.container} maxWidth={false}>
         <ImageList
           className={styles.imageList}
-          sx={{ gridAutoFlow: "column" }}
+        //   sx={{ gridAutoFlow: "column" }}
           variant="quilted"
-          cols={3}
-          rowHeight={164}
+          cols={6}
+          rows={2}
         >
           {items.map((item, i) => (
             <ImageListItem
@@ -25,7 +24,7 @@ export default function Featured({ items = [] }) {
             >
               <img
                 className={styles.image}
-                srcSet={[item.image, 120, item.rows, item.cols]}
+                src={item.image}
                 alt={item.title}
                 loading="lazy"
                 onClick={() => router.push(item.href)}
@@ -34,6 +33,5 @@ export default function Featured({ items = [] }) {
           ))}
         </ImageList>
       </Container>
-    </div>
   );
 }
