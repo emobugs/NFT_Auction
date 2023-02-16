@@ -4,7 +4,7 @@ import Step from "./Step";
 
 import { Container, Grid, Button } from "@mui/material";
 
-export default function How({ items = [], link }) {
+export default function How({ title, description, items = [], link  }) {
   return (
     <div className={styles.wrapper}>
       <Container className={styles.container}>
