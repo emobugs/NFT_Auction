@@ -1,28 +1,52 @@
-@use '../../styles/colors';
+@use "../../styles/colors";
 
-.wrapper{
-    background-color: colors.$background_paper !important;
-    padding: 10px !important;
+.text {
+  display: flex;
+  height: 4vh;
+  width: 20vw;
+  justify-content: center;
+  align-items: center;
+  color: colors.$text_disabled;
+  font-size: 0.9em !important;
+  
+}
+.input::placeholder {
+  text-indent: 2vw;
+  font-size: 1.5vh;
 }
 
-.container{
-
-}
-.logoGrid{
-
+.wrapper {
+  
+  background-color: #191828;
 }
 
-.inputGrid{
+.container {
+  display: flex !important;
+  padding: 0 !important;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+}
+.logoGrid {
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+}
+.inputGrid {
+  display: flex;
 
+  justify-content: center;
+  
+  
 }
 
-.buttonsGrid{
-    
+.buttonGrid {
+  padding-left: 5vw;
 }
 
-.text{
-    color: colors.$text_disabled;
-}
-.button{
-    color: colors.$text_secondary !important;
+.textBtn {
+  font-weight: 300 !important;
+  font-family: "Roboto";
+  color: white !important;
+  font-size: 0.7em !important;
 }
