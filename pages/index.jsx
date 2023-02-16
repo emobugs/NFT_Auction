@@ -7,7 +7,8 @@ import Step from "../src/components/how/Step";
 export default function Index() {
   return (
     <div>
-      <How items = {
+      <Footer></Footer>
+      {/* <How items = {
         [
           {
             number:1,
@@ -35,7 +36,7 @@ export default function Index() {
            }
 
         ]
-      }></How>
+      }></How> */}
       {/* <Step ></Step> */}
     </div>
   );
