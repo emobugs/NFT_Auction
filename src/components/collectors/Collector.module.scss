@@ -1,0 +1,30 @@
+@use "../../styles/colors";
+
+.container {
+  padding: 1rem;
+}
+
+.numCnt{
+    width: 100%;
+    height: 100%;
+}
+
+.number{
+    border: 1px solid black;
+    height: 100%;
+}
+
+//primary main darker
+.lighter {
+  background-color: rgba(colors.$primary_main, 60%);
+  .number {
+    background-color: red;
+  }
+}
+
+.darker {
+  background-color: rgba(colors.$primary_main, 30%);
+  .number {
+    background-color: blue;
+  }
+}
