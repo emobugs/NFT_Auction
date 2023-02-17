@@ -4,12 +4,12 @@ import Card from "../src/components/card/Card";
 import How from "../src/components/how/How";
 import Step from "../src/components/how/Step";
 // import Featured from "../src/components/featured/Featured";
-import CollectorsColumn from "../src/components/collectors/CollectorsColumn";
+import CollectorColumn from "../src/components/collectors/CollectorColumn";
 
 export default function Index() {
   return (
     <div>
-      <CollectorsColumn
+      <CollectorColumn
         items={[
           {
             name: "emo",
@@ -33,7 +33,7 @@ export default function Index() {
             id: 3
           }
         ]}
-      ></CollectorsColumn>
+      ></CollectorColumn>
       {/* <Featured items = {
         [
           {
