@@ -13,21 +13,44 @@ export default function Collector({
   type,
   id,
   nftsCount,
+  itemsCount,
 }) {
-  const [backGround, setBackGround] = useState();
+  const [bottomRadius, setBottomRadius] = useState();
+  const [topRadius, setTopRadius] = useState();
+
   useEffect(() => {
-    setBackGround(type);
+    setBorderRad();
   }, []);
 
+  const setBorderRad = () => {
+    if (id === 1) {
+      setTopRadius(true);
+    } else if (id === itemsCount) {
+      setBottomRadius(true);
+    }
+  };
+
   return (
-    <div className={classNames(styles.container, styles[type])}>
-      <Grid container direction="row" alignItems="center">
-        <Grid item md={2}>
-            <div className={styles.numCnt}>
-          <h1 className={styles.number}>{id}</h1>
-            </div>
+    <div
+      className={
+        (classNames(styles.container, styles[type],
+        styles[bottomRadius ? 'borderRad-bottom' : ""],
+        styles[topRadius ? 'borderRad-up' : ""]
+        ))
+      }
+    >
+      <Grid
+        className={styles.gridCnt}
+        container
+        direction="row"
+        alignItems="center"
+      >
+        <Grid className={styles.numGrid} item md={3}>
+          <div className={styles.numCnt}>
+            <h1 className={styles.number}>{id}</h1>
+          </div>
         </Grid>
-        <Grid item md={8}>
+        <Grid className={styles.userGrid} item md={9}>
           <User
             name={name}
             avatar={avatar}
