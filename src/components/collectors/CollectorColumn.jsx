@@ -1,8 +1,12 @@
 import styles from "./CollectorColumn.module.scss"
 
 import Collector from "./Collector";
+import {useState} from 'react';
 
 export default function CollectorsColumn({ items }) {
+  const [firstLast, setFirstLast] = useState(items.length)
+
+
   return (
     <div className={styles.container}>
       {items.map((item, i) => {
@@ -15,6 +19,7 @@ export default function CollectorsColumn({ items }) {
           id={item.id}
           type={backG}
           nftsCount={item.nftsCount}
+          itemsCount={firstLast}
         ></Collector>;
       })}
     </div>
