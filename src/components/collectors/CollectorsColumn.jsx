@@ -8,6 +8,7 @@ export default function CollectorsColumn({ items }) {
       {items.map((item, i) => {
         const backG = (i + 1) % 2 === 0 ? 'lighter' : 'darker';
         return <Collector
+        className={styles.collector}
           name={item.name}
           avatar={item.avatar}
           verified={item.verified}
