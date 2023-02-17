@@ -1,41 +1,52 @@
 @use "../../styles/colors";
 
 .container {
-  padding: 1rem;
-  border-radius: 20px;
   margin: 10px;
+  overflow: hidden;
 }
 
-.collector{
-
+.gridCnt {
+  min-height: 6vh;
 }
 
-.numCnt{
-    width: 100%;
-    height: 100%;
+.numGrid {
+  height: 15rem;
+  font-size: 2rem;
 }
 
-.number{
-    border: 1px solid black;
-    height: 100%;
+.numCnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.number {
+  width: fit-content;
+  outline: none;
 }
 
 //primary main darker
 .lighter {
   background-color: rgba(colors.$primary_main, 60%);
-  .number {
-    background-color: red;
+  .numCnt {
+    background-color: rgba(colors.$primary_main, 50%);
   }
 }
 
 .darker {
   background-color: rgba(colors.$primary_main, 30%);
-  .number {
-    background-color: blue;
+  .numCnt {
+    background-color: rgba(colors.$primary_main, 20%);
   }
 }
 
-.border-rad-bottom{
+.borderRad-bottom {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+
+.borderRad-up {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
