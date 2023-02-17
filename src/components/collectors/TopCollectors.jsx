@@ -58,6 +58,7 @@ export default function TopCollectors({ collectors }) {
               return (
                 <Grid className={styles.gridContainer} item md={4} key={i}>
                   <CollectorColumn
+                  className={styles.collectorColumn}
                     items={innerList.map((list) => {
                       return list.props;
                     })}
