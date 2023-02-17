@@ -1,0 +1,21 @@
+.wrapper{
+    padding :5rem;  
+}
+
+.top{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading{
+    font-size: 4rem;
+}
+
+.gridSel{
+    grid-column-start: 11 !important;
+}
+
+.selectEl{
+    justify-self: flex-end !important;
+}

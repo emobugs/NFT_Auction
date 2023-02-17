@@ -3,7 +3,8 @@ import styles from "./CollectorColumn.module.scss"
 import Collector from "./Collector";
 import {useState} from 'react';
 
-export default function CollectorsColumn({ items }) {
+
+export default function CollectorsColumn({ items, num }) {
   const [firstLast, setFirstLast] = useState(items.length)
 
 

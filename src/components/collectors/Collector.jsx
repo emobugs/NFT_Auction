@@ -13,7 +13,7 @@ export default function Collector({
   type,
   id,
   nftsCount,
-  itemsCount,
+  itemsCount
 }) {
   const [bottomRadius, setBottomRadius] = useState();
   const [topRadius, setTopRadius] = useState();
@@ -23,9 +23,9 @@ export default function Collector({
   }, []);
 
   const setBorderRad = () => {
-    if (id === 1) {
+    if (id % 3 === 1) {
       setTopRadius(true);
-    } else if (id === itemsCount) {
+    } else if (id % 3 === 0 ) {
       setBottomRadius(true);
     }
   };

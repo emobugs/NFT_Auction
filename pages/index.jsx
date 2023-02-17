@@ -5,11 +5,73 @@ import How from "../src/components/how/How";
 import Step from "../src/components/how/Step";
 // import Featured from "../src/components/featured/Featured";
 import CollectorColumn from "../src/components/collectors/CollectorColumn";
+import TopCollectors from "../src/components/collectors/TopCollectors";
+import Trending from "../src/components/trending/Trending";
 
 export default function Index() {
   return (
     <div>
-      <CollectorColumn
+
+      <Trending></Trending>
+    <TopCollectors collectors= {
+      [
+        {
+          name: 'emo',
+          nftsCount: 120,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'ivan',
+          nftsCount: 32,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'sasho',
+          nftsCount: 20,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'emo',
+          nftsCount: 120,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'ivan',
+          nftsCount: 32,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'sasho',
+          nftsCount: 20,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'emo',
+          nftsCount: 120,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'ivan',
+          nftsCount: 32,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+        {
+          name: 'sasho',
+          nftsCount: 20,
+          avatar: './images/avatar.png',
+          verified: true,
+        },
+      ]
+    }></TopCollectors>
+      {/* <CollectorColumn
         items={[
           {
             name: "emo",
@@ -33,7 +95,7 @@ export default function Index() {
             id: 3
           }
         ]}
-      ></CollectorColumn>
+      ></CollectorColumn> */}
       {/* <Featured items = {
         [
           {
