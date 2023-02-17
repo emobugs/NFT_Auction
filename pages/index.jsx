@@ -11,8 +11,6 @@ import Trending from "../src/components/trending/Trending";
 export default function Index() {
   return (
     <div>
-
-      <Trending></Trending>
     <TopCollectors collectors= {
       [
         {

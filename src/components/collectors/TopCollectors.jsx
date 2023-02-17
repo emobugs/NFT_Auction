@@ -36,8 +36,7 @@ export default function TopCollectors({ collectors }) {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
-      <Grid container>
+      <Grid className={styles.container} container >
         <Grid className={styles.top} container >
           <Grid item md={10}>
             <h1 className={styles.heading}>Top Collectors</h1>
@@ -69,7 +68,6 @@ export default function TopCollectors({ collectors }) {
           }
         </Grid>
       </Grid>
-    </div>
   );
 
   //   TopCollectors.PropTypes = {
