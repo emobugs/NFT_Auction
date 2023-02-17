@@ -10,7 +10,7 @@ size = 55, verified = false}){
             <Avatar size = {size} url={avatar}/>
             <div className={styles["user-data"]}>
             <h2 className={styles.name}>{name}</h2>
-            <p className={styles.info}>{info}</p>
+            <p className={styles.info}>{info} items</p>
             </div>
         </div>
     )
