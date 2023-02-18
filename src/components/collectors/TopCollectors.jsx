@@ -13,7 +13,7 @@ export default function TopCollectors({ collectors }) {
   const [number, setNumber] = useState(1);
 
   const chunkCollectors = () => {
-    const collectorsL = collectors.map((c, i) => {
+    const collectorsL = collectors?.map((c, i) => {
       return (
         <Collector
           name={c.name}
@@ -28,26 +28,32 @@ export default function TopCollectors({ collectors }) {
   };
 
   useEffect(() => {
-    collectors.map((item,index)=>item.id=index+1)
+    // collectors.map((item,index)=>item.id=index+1)
     chunkCollectors();
   }, []);
 
   return (
-      <div className={styles.container} >
-        <Grid className={styles.top} container >
-          <Grid item md={10}>
-            <h1 className={styles.heading}>Top Collectors</h1>
-          </Grid>
-          <Grid className={styles.gridSel} item md={2}>
-            <FormControl sx={{ width: "100%", marginLeft: "auto" }}>
-              <Select className={styles.selectEl} labelId="select" id="select" label="Today">
-                <MenuItem value={"1"}>Today</MenuItem>
-                <MenuItem value={"2"}>This Week</MenuItem>
-                <MenuItem value={"3"}>This Month</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
+    <Container className={styles.container}>
+      <Grid className={styles.top} container>
+        {/* <Grid item md={10}> */}
+        <h1 className={styles.heading}>Top Collectors</h1>
+        {/* </Grid> */}
+        {/* <Grid className={styles.gridSel} item md={2}> */}
+        <FormControl sx={{ width: "100%", marginLeft: "auto" }}>
+          <Select
+            className={styles.selectEl}
+            labelId="select"
+            id="select"
+            label="Today"
+          >
+            <MenuItem value={"1"}>Today</MenuItem>
+            <MenuItem value={"2"}>This Week</MenuItem>
+            <MenuItem value={"3"}>This Month</MenuItem>
+          </Select>
+        </FormControl>
+        {/* </Grid> */}
+      </Grid>
+      <Container>
         <Grid container direction="row">
           {
             // console.log(collectorsList)
@@ -55,7 +61,7 @@ export default function TopCollectors({ collectors }) {
               return (
                 <Grid className={styles.gridContainer} item md={4} key={i}>
                   <CollectorColumn
-                  className={styles.collectorColumn}
+                    className={styles.collectorColumn}
                     items={innerList.map((list) => {
                       return list.props;
                     })}
@@ -65,7 +71,8 @@ export default function TopCollectors({ collectors }) {
             })
           }
         </Grid>
-      </div>
+      </Container>
+    </Container>
   );
 
   //   TopCollectors.PropTypes = {
