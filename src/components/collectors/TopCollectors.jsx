@@ -7,7 +7,7 @@ import { Grid, FormControl, Select, MenuItem, Container } from "@mui/material";
 
 import CollectorColumn from "./CollectorColumn";
 
-export default function TopCollectors({ collectors }) {
+export default function TopCollectors({ collectors = [] }) {
     const reactId = nextId();
 
   collectors.map((item, index) => (item.id = index + 1));
