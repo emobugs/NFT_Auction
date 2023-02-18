@@ -31,9 +31,9 @@ export default function TopCollectors({ collectors = [] }) {
       <Container maxWidth={false}>
         <Grid className={styles.collectorsGrid} container>
           {_.chunk(collectors, 3).map((collector, i) => (
-            <Grid key={i}>
-              <CollectorColumn items={collector} key={i*3}></CollectorColumn>
-            </Grid>
+          //  <Grid key={i}>
+              <CollectorColumn className={styles.collectorColumn} items={collector} key={i*3}></CollectorColumn>
+            // </Grid>
           ))}
         </Grid>
       </Container>
