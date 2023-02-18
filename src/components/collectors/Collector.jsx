@@ -12,23 +12,23 @@ export default function Collector({
   verified,
   type,
   id,
-  nftsCount,
-  itemsCount
+  nftsCount
+  // itemsCount
 }) {
-  const [bottomRadius, setBottomRadius] = useState();
-  const [topRadius, setTopRadius] = useState();
+  // const [bottomRadius, setBottomRadius] = useState();
+  // const [topRadius, setTopRadius] = useState();
 
-  useEffect(() => {
-    setBorderRad();
-  }, []);
+  // useEffect(() => {
+  //   setBorderRad();
+  // }, []);
 
-  const setBorderRad = () => {
-    if (id % 3 === 1) {
-      setTopRadius(true);
-    } else if (id % 3 === 0 ) {
-      setBottomRadius(true);
-    }
-  };
+  // const setBorderRad = () => {
+  //   if (id % 3 === 1) {
+  //     setTopRadius(true);
+  //   } else if (id % 3 === 0 ) {
+  //     setBottomRadius(true);
+  //   }
+  // };
 
   return (
     <div
