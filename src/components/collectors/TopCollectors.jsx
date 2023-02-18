@@ -32,7 +32,6 @@ export default function TopCollectors({ collectors }) {
         </FormControl>
         </Grid>
       </Grid>
-      <Container maxWidth={false}>
         <Grid className={styles.collectorsGrid} container direction="row">
           {chunk(collectors, 3).map((collectors) => {
             return (
@@ -42,7 +41,6 @@ export default function TopCollectors({ collectors }) {
             );
           })}
         </Grid>
-      </Container>
     </Container>
   );
 
