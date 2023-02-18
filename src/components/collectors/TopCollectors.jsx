@@ -11,7 +11,7 @@ export default function TopCollectors({ collectors }) {
   collectors.map((item, index) => (item.id = index + 1));
 
   return (
-    <Container className={styles.container} maxWidth={false}>
+    <div className={styles.container}>
       <Grid className={styles.top} container>
         <Grid item md={10}>
         <h1 className={styles.heading}>Top Collectors</h1>
@@ -41,7 +41,7 @@ export default function TopCollectors({ collectors }) {
             );
           })}
         </Grid>
-    </Container>
+    </div>
   );
 
   //   TopCollectors.PropTypes = {
