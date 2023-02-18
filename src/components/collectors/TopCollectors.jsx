@@ -1,14 +1,18 @@
 import styles from "./TopCollectors.module.scss";
 
-import nextId from "react-id-generator";
+import { useState, useEffect } from 'react';
 
-import chunk from "lodash/chunk";
+import _ from "lodash";
 import { Grid, FormControl, Select, MenuItem, Container } from "@mui/material";
 
 import CollectorColumn from "./CollectorColumn";
 
 export default function TopCollectors({ collectors = [] }) {
-  const reactId = nextId();
+
+    useEffect(() => {
+
+    },[])
+
 
   collectors.map((item, index) => (item.id = index + 1));
 
@@ -35,11 +39,7 @@ export default function TopCollectors({ collectors = [] }) {
         {/* </Grid> */}
       </Container>
       <Grid className={styles.collectorsGrid} container direction="row">
-        {chunk(collectors, 3).map((collectors, i) => {
-          <Grid item md={3} key={reactId}>
-            <CollectorColumn items={collectors}></CollectorColumn>
-          </Grid>;
-        })}
+        {_.chunk(collectors, 3).map((collectors, i) =><Grid><CollectorColumn items={collectors}></CollectorColumn></Grid>)}
       </Grid>
     </div>
   );
