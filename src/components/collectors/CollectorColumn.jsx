@@ -21,6 +21,7 @@ export default function CollectorsColumn({ items, num }) {
           type={backG}
           nftsCount={item.nftsCount}
           itemsCount={firstLast}
+          key={i}
         ></Collector>;
       })}
     </div>
