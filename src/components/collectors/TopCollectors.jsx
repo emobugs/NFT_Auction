@@ -8,7 +8,7 @@ import { Grid, FormControl, Select, MenuItem, Container } from "@mui/material";
 import CollectorColumn from "./CollectorColumn";
 
 export default function TopCollectors({ collectors = [] }) {
-    const reactId = nextId();
+  const reactId = nextId();
 
   collectors.map((item, index) => (item.id = index + 1));
 
@@ -34,19 +34,14 @@ export default function TopCollectors({ collectors = [] }) {
         </FormControl>
         {/* </Grid> */}
       </Container>
-        <Grid className={styles.collectorsGrid} container direction="row">
-          {chunk(collectors, 3).map((collectors, i) => {
-            return (
-              <Grid item md={3} key={reactId}>
-                <CollectorColumn items={collectors}></CollectorColumn>
-              </Grid>
-            );
-          })}
-        </Grid>
+      <Grid className={styles.collectorsGrid} container direction="row">
+        {chunk(collectors, 3).map((collectors, i) => {
+          <Grid item md={3} key={reactId}>
+            <CollectorColumn items={collectors}></CollectorColumn>
+          </Grid>;
+        })}
+      </Grid>
     </div>
   );
 
-  //   TopCollectors.PropTypes = {
-  //     collectors : PropTypes.array
-  //   }
 }
