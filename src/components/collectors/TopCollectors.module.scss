@@ -1,25 +1,7 @@
-.container{
-    padding :5rem;  
-}
+@use "../../styles/colors";
 
 .top{
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    padding: 3rem;
 }
 
-.heading{
-    font-size: 4rem;
-}
-
-.gridSel{
-    grid-column-start: 11 !important;
-}
-
-.selectEl{
-    justify-self: flex-end !important;
-}
-
-.collectorColumn{
-    
-}
