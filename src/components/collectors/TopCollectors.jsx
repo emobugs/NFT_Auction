@@ -1,24 +1,21 @@
 import styles from "./TopCollectors.module.scss";
 
-import { useState, useEffect } from 'react';
-
 import _ from "lodash";
-import { Grid, FormControl, Select, MenuItem, Container } from "@mui/material";
+import { Grid, Select, MenuItem, Container } from "@mui/material";
 
 import CollectorColumn from "./CollectorColumn";
 
 export default function TopCollectors({ collectors = [] }) {
 
-    useEffect(() => {
-
-    },[])
-
-
   collectors.map((item, index) => (item.id = index + 1));
 
   return (
     <div className={styles.container}>
+<<<<<<< HEAD
+      <Container className={styles.top} maxWidth={false}>
+=======
       <Container className={styles.top} container>
+>>>>>>> parent of d478a3c... fix: remove container prop of Container rename mapped value
         {/* <Grid item md={10}> */}
         <h1 className={styles.heading}>Top Collectors</h1>
         {/* </Grid> */}
@@ -38,8 +35,13 @@ export default function TopCollectors({ collectors = [] }) {
         </FormControl>
         {/* </Grid> */}
       </Container>
+<<<<<<< HEAD
+      <Grid className={styles.collectorsGrid} container>
+        {_.chunk(collectors, 3).map((collector) =><Grid><CollectorColumn items={collector}></CollectorColumn></Grid>)}
+=======
       <Grid className={styles.collectorsGrid} container direction="row">
         {_.chunk(collectors, 3).map((collectors, i) =><Grid><CollectorColumn items={collectors}></CollectorColumn></Grid>)}
+>>>>>>> parent of d478a3c... fix: remove container prop of Container rename mapped value
       </Grid>
     </div>
   );

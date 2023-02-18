@@ -6,6 +6,7 @@
 }
 
 .collectorsGrid {
-    display: flex;
+    display: flex !important;
+    justify-content:space-evenly;
 }
 
