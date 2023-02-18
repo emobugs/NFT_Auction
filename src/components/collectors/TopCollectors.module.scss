@@ -1,12 +1,16 @@
 @use "../../styles/colors";
 
-.top{
-    align-items: center;
-    padding: 3rem;
+.header {
+  font-size: 3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select {
+  width: 20% !important;
 }
 
 .collectorGrid {
-    display: flex !important;
-    justify-content:space-evenly;
+  display: flex !important;
+  justify-content: space-between;
 }
-

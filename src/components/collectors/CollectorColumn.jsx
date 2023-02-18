@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 
 export default function CollectorsColumn({ items, num }) {
-  const [firstLast, setFirstLast] = useState(items.length)
+  // const [firstLast, setFirstLast] = useState(items.length)
 
 
   return (
@@ -20,7 +20,7 @@ export default function CollectorsColumn({ items, num }) {
           id={item.id}
           type={backG}
           nftsCount={item.nftsCount}
-          itemsCount={firstLast}
+          // itemsCount={firstLast}
           key={i}
         ></Collector>;
       })}

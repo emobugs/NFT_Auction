@@ -34,8 +34,8 @@ export default function Collector({
     <div
       className={
         (classNames(styles.container, styles[type],
-        styles[bottomRadius ? 'borderRad-bottom' : ""],
-        styles[topRadius ? 'borderRad-up' : ""]
+        // styles[bottomRadius ? 'borderRad-bottom' : ""],
+        // styles[topRadius ? 'borderRad-up' : ""]
         ))
       }
     >
@@ -45,12 +45,12 @@ export default function Collector({
         direction="row"
         alignItems="center"
       >
-        <Grid className={styles.numGrid} item md={3}>
+        <Grid className={styles.numGrid} item md={4}>
           <div className={styles.numCnt}>
             <h1 className={styles.number}>{id}</h1>
           </div>
         </Grid>
-        <Grid className={styles.userGrid} item md={9}>
+        <Grid className={styles.userGrid} item md={8}>
           <User
             name={name}
             avatar={avatar}
