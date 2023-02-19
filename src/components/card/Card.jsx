@@ -3,12 +3,14 @@ import { useState, useEffect } from "react";
 
 import { Card as CardMui, Chip } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import millify from "millify";
 
 import Avatar from "../avatar/Avatar";
 
 import Countdown from "react-countdown";
+import { Favorite } from "@mui/icons-material";
 
 export default function Card({
   title = "",
@@ -47,6 +49,7 @@ export default function Card({
       setLiveClass(`${styles.card} ${styles.live}`);
       setLiveBadge(generateLive);
     }
+    setLiveClass(`${styles.card}`);
   }, []);
 
   return (
@@ -62,13 +65,14 @@ export default function Card({
         <div className={styles["basic-info"]}>
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.price}>
-            ~{price} {currency}
+            ~{price.toFixed(1)} {currency}
           </p>
         </div>
         <Chip
+          className={styles.likes}
+          icon={<FavoriteIcon className={styles['likes-icon']}/>}
           variant="outlined"
           label={millify(likes)}
-          className={styles.likes}
         />
       </div>
     </CardMui>

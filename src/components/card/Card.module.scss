@@ -1,18 +1,11 @@
 @use "../../styles/colors";
-
-@mixin flex($dir){
-    display: flex;
-    flex-direction: $dir;
-}
+@use "../../styles/mixins";
 
 .card {
-  padding: 1rem !important;
-  max-width: 300px;
-  @include flex(column);
-}
-
-.avatar {
-  margin-bottom: 1rem;
+  @include mixins.flex(column);
+  @include mixins.wrapper(1.5rem, 1rem);
+  align-content: space-between;
+  gap: 1rem;
 }
 
 .info {
@@ -24,25 +17,38 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  flex: 1 1 auto;
 }
 
 .media {
   border-radius: 5%;
 }
 
+.title {
+  margin: 0;
+  color: colors.$text_primary;
+}
+
 .price {
+  margin: 0;
   color: colors.$secondary_main;
 }
 
 .likes {
-  color: colors.$secondary_main;
-  flex: 1;
-  align-self: flex-end;
+  // flex: 1;
+  width: fit-content;
+  padding: 1rem 0.5rem !important;
+  align-self: center;
+  color: colors.$secondary_main !important;
+  border: 3px solid colors.$secondary_main !important;
+  border-radius: 30px !important;
+  font-size: 1.2rem !important;
+  &-icon{
+    font-size: 1.2rem !important;
+    color: colors.$secondary_main !important;
+  }
 }
 
-.title {
-  color: colors.$text_primary;
-}
 
 // Live card styling
 

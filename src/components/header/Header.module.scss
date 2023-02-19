@@ -1,29 +1,47 @@
 @use "../../styles/colors";
+@use "../../styles/mixins";
 
 .wrapper{
+    @include mixins.wrapper();
+    width: 100%;
     background-color: colors.$background_paper !important;
-    padding: 10px !important;
+}
+
+.grid-cnt{
+    justify-content: space-between;
+    align-items: center;
 }
 
 .search-input{
-    background-color: colors.$background_default;
-    font-size: 30px;
-}
-
-
-.TextField{
-    width: 100%;
-    border-radius: 25px;
-    height: 45px;
+    width: 70%;
+    border-radius: 30px !important;
+    line-height: 3rem;
     padding: 10px !important;
     background-color: colors.$background_default;
+    
+    ::placeholder{
+        font-size: 1rem !important;
+        opacity: 1 !important;
+    }
+}
+
+.icon{
+    color: colors.$text_secondary;
+}
+
+.buttons{
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .btn-nav{
+    margin-left: auto;
     color: colors.$text_secondary !important;
+    padding: 1rem !important;
     
     &-exp{
         background-color: colors.$primary_main !important;
         color: colors.$text_primary !important;
+        border-radius: 30px !important;
     }
 }

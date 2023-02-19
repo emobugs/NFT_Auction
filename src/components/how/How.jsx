@@ -27,7 +27,7 @@ export default function How({ title, description, items = [], link  }) {
             </p>
             <Button href={link}>Learn more</Button>
           </Grid>
-          <Grid className={styles.steps} item md={4} direction="column">
+          <Grid className={styles.steps} container item md={4} direction="column">
             {items.map((item, i) => {
               return (
                 <Grid item md={4} className={styles.stepCnt}>

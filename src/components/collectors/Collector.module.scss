@@ -1,18 +1,17 @@
 @use "../../styles/colors";
 
 .container {
-  margin: 10px;
+  width: 100%;
   overflow: hidden;
 }
 
 .gridCnt {
-  min-height: 6vh;
+  // min-height: 6vh;
 }
 
 .numGrid {
-  height: 15rem;
+  max-height: 15rem;
   font-size: 2rem;
-
 }
 
 .numCnt {

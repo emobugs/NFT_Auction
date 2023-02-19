@@ -1,16 +1,36 @@
 @use "../../styles/colors";
+@use "../../styles/mixins";
 
-.header {
-  font-size: 3em;
-  display: flex;
-  justify-content: space-between;
+.container{
+  @include mixins.wrapper();
+  margin-top: 10vh;
+}
+
+.top{
+  @include mixins.flex(row);
+
+}
+
+.title{
+  font-size: 4rem;
 }
 
 .select {
   width: 20% !important;
+  margin-left: auto;
+  justify-self: flex-end;
+  text-indent: 1rem;
 }
 
-.collectorGrid {
-  display: flex !important;
-  justify-content: space-between;
+.collectors-cnt {
+  max-width: 100%;
+  display: grid !important;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(min-content, 480px)) !important;
+}
+
+.collector{
+  justify-self: stretch !important;
+  // max-width: 24%;
+  // flex: 1 1 auto;
 }

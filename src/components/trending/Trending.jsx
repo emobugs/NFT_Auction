@@ -6,23 +6,28 @@ const titles = ["Clock", "DOGE", "BTC", "Litecoin"];
 
 export default function Trending({ cards = [] }) {
   return (
-    <Container className={styles.container} sx={{ width: "100%", margin: 0 }}>
+    <Container className={styles.container} maxWidth={false}>
       <div className={styles.top}>
         <h2 className={styles.heading}>Trending</h2>
         {/* Select component */}
-        <FormControl sx={{ width: "300px", marginLeft: "auto" }}>
-          <Select labelId="select" id="select" label="Today">
-            <MenuItem value={1}>Today</MenuItem>
-            <MenuItem value={2}>This Week</MenuItem>
-            <MenuItem value={3}>This Month</MenuItem>
-          </Select>
-        </FormControl>
+        {/* <FormControl sx={{ width: "100%", marginLeft: "auto" }}> */}
+        <Select
+          // defaultValue={"Sort by"}
+          value={"sortby"}
+          className={styles.select}
+        >
+          <MenuItem value={"sortby"}>Sort by</MenuItem>
+          <MenuItem value={"week"}>This week</MenuItem>
+          <MenuItem value={"month"}>This month</MenuItem>
+          <MenuItem value={"year"}>This year</MenuItem>
+        </Select>
+        {/* </FormControl> */}
+        {/* </Grid> */}
       </div>
-      <Container>
-        <Grid container display="flex" className={styles["grid-cnt"]}>
+        <Grid container className={styles["cards-cnt"]}>
           {cards.map((card, i) => {
             return (
-              <Grid item md={3} key={i * 3}>
+              <Grid className={styles["card-grid"]} key={i * 3}>
                 <Card
                   key={i}
                   name={titles[i]}
@@ -36,7 +41,6 @@ export default function Trending({ cards = [] }) {
             );
           })}
         </Grid>
-      </Container>
     </Container>
   );
 }

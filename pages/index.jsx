@@ -11,91 +11,30 @@ import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
 import dataNfts from "../data/nfts.json";
 
-import {useState} from 'react';
+import { useState, useEffect } from "react";
 
 export default function Index() {
-  const [dataFeatured, setDataFeatured] = useState([]);
-  const [dataTrending, setdataTrending] = useState([]);
-  const [dataUsers, setdataUsers] = useState([]);
-  const [dataNfts, setdataNfts] = useState([]);
+  const [featureCards, setFeatureCards] = useState([]);
+  const [trendingCards, setTrendingCards] = useState([]);
+  const [dataCollectors, setDataCollectors] = useState([]);
+  const [nfts, setNfts] = useState([]);
+
+  useEffect(() => {
+    setFeatureCards(dataFeatured);
+    setTrendingCards(dataTrending);
+    setDataCollectors(dataUsers);
+    setNfts(dataNfts);
+  }, []);
+
   return (
     <div>
-      {/* <Header></Header>
-      <Featured></Featured>
-      <Trending></Trending>
-      <TopCollectors></TopCollectors>
+      <Header></Header>
+      <Featured items={featureCards}></Featured>
+      <Trending cards={trendingCards}></Trending>
+      <TopCollectors collectors={dataCollectors}></TopCollectors>
       <How></How>
-      <Auctions></Auctions> */}
-      <TopCollectors
-        collectors={[
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-          {
-            name: "emo",
-            nftsCount: 12,
-            avatar: "./images/avatar.png",
-            verified: true,
-          },
-        ]}
-      ></TopCollectors>
+      <Auctions cards={nfts}></Auctions>
+      <Footer></Footer>
     </div>
   );
 }

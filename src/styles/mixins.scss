@@ -1,0 +1,8 @@
+@mixin wrapper($ptb:1%, $plf : 8% ){
+    padding:$ptb $plf !important;
+}
+
+@mixin flex($dir){
+    display: flex;
+    flex-direction: $dir;
+}
