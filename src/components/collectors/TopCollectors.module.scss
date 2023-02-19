@@ -26,7 +26,7 @@
   max-width: 100%;
   display: grid !important;
   gap: 1rem;
-  grid-template-columns: repeat(4, minmax(min-content, 480px)) !important;
+  grid-template-columns: repeat(4, minmax(min-content, 1fr)) !important;
 }
 
 .collector{

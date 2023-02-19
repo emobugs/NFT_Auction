@@ -31,7 +31,13 @@ export default function Index() {
       <Header></Header>
       <Featured items={featureCards}></Featured>
       <Trending cards={trendingCards}></Trending>
-      <TopCollectors collectors={dataCollectors}></TopCollectors>
+      <TopCollectors
+        collectors={dataCollectors.map((c) => {
+          // const name = c.username;
+          c["name"] = c.username;
+          return c;
+        })}
+      ></TopCollectors>
       <How></How>
       <Auctions cards={nfts}></Auctions>
       <Footer></Footer>

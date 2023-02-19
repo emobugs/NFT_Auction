@@ -6,47 +6,48 @@
 }
 
 .gridCnt {
-  // min-height: 6vh;
+  padding: 0;
+  margin: 0;
 }
 
-.numGrid {
-  max-height: 15rem;
-  font-size: 2rem;
+.numGrid{
+
 }
 
 .numCnt {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100% !important;
 }
 
 .number {
-  width: fit-content;
-  outline: none;
+  // width: fit-content;
+  // margin: 0;
+
 }
 
 //primary main darker
 .lighter {
   background-color: rgba(colors.$primary_main, 60%);
-  .numCnt {
+  .numGrid {
     background-color: rgba(colors.$primary_main, 50%);
   }
 }
 
 .darker {
   background-color: rgba(colors.$primary_main, 30%);
-  .numCnt {
+  .numGrid {
     background-color: rgba(colors.$primary_main, 20%);
   }
 }
 
 .borderRad-bottom {
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .borderRad-up {
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
