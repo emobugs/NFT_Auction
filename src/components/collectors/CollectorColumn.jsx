@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 
 export default function CollectorColumn({ items }) {
-  // const [firstLast, setFirstLast] = useState(items.length)
+  const [firstLast, setFirstLast] = useState(items.length)
 
 
   return (
@@ -19,7 +19,7 @@ export default function CollectorColumn({ items }) {
           id={item.id}
           type={i % 2 === 0 ? 'darker' : 'lighter'}
           nftsCount={item.nftsCount}
-          // itemsCount={firstLast}
+          itemsCount={firstLast}
           key={i}
         ></Collector>;
       })}
