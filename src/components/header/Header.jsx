@@ -7,19 +7,19 @@ import SearchIcon from "@mui/icons-material/Search";
 export default function Header() {
   return (
     <div className={styles.wrapper}>
-      <Grid container justifyContent="space-between" alignItems="center">
+      <Grid container className={styles['grid-cnt']}>
         <Grid item md={2}>
           <Logo className={styles.logo} />
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={6}>
           <TextField
             id="input-search"
             placeholder="Find items, users and activities"
-            className={styles.TextField}
+            className={styles['search-input']}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchIcon />
+                  <SearchIcon className={styles.icon}/>
                 </InputAdornment>
               ),
             }}
@@ -30,12 +30,17 @@ export default function Header() {
           container
           item
           md={4}
-          flexDirection="row"
-          className={styles.container}
+          // justifyContent="flex-end"
+          className={styles.buttons}
         >
-          <Button className={styles['btn-nav']}>Home</Button>
-          <Button className={styles['btn-nav']}>Activity</Button>
-          <Button variant="contained" className={styles['btn-nav','btn-nav-exp']}>Explore</Button>
+          <Button className={styles["btn-nav"]}>Home</Button>
+          <Button className={styles["btn-nav"]}>Activity</Button>
+          <Button
+            variant="contained"
+            className={styles[("btn-nav", "btn-nav-exp")]}
+          >
+            Explore
+          </Button>
         </Grid>
       </Grid>
     </div>
