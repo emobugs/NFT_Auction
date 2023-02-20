@@ -1,0 +1,9 @@
+@use "../../styles//colors";
+
+.product-info-title{
+    background-color: transparent;
+}
+
+.title{
+    color: colors.$text_primary;
+}
