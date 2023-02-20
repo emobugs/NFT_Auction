@@ -1,4 +1,4 @@
-import styles from "./User.mohdule.scss";
+import styles from "./User.module.scss";
 
 import Avatar from "../avatar/Avatar";
 
