@@ -17,6 +17,9 @@
 }
 
 .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-height: fit-content;
   flex: 1;
   font-size: 1rem;
@@ -24,12 +27,6 @@
   margin: 0 !important;
   padding: 0 !important;
   // display hading center if there are no info prop
-  &::before {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
 }
 
 .info {
