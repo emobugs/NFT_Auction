@@ -5,7 +5,7 @@ import Footer from "../src/components/footer/Footer";
 import Header from "../src/components/header/Header";
 import How from "../src/components/how/How";
 import Trending from "../src/components/trending/Trending";
-import ProductImage from "../src/components/productImage/ProductImage";
+import ProductImage from "../src/components/product/ProductImage";
 
 import dataFeatured from "../data/featured.json";
 import dataNfts from "../data/nfts.json";
