@@ -45,12 +45,12 @@ export default function Collector({
         direction="row"
         alignItems="center"
       >
-        <Grid className={styles.numGrid} item md={4}>
+        <Grid className={styles.numGrid} item md={3}>
           <div className={styles.numCnt}>
             <h1 className={styles.number}>{id}</h1>
           </div>
         </Grid>
-        <Grid className={styles.userGrid} item md={8}>
+        <Grid className={styles.userGrid} item md={9}>
           <User
             name={name}
             avatar={avatar}
