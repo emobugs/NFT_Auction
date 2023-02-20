@@ -30,7 +30,6 @@ export default function Header() {
           container
           item
           md={4}
-          // justifyContent="flex-end"
           className={styles.buttons}
         >
           <Button className={styles["btn-nav"]}>Home</Button>

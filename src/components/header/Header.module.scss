@@ -2,7 +2,7 @@
 @use "../../styles/mixins";
 
 .wrapper{
-    @include mixins.wrapper();
+    @include mixins.wrapper(); // add padding to the container element
     width: 100%;
     background-color: colors.$background_paper !important;
 }
