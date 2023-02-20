@@ -1,0 +1,26 @@
+@use "../../styles/colors";
+
+.product-info-creator {
+  width: 340px;
+  margin: auto;
+  // width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.title {
+  background-color: rgba(colors.$primary_main, 10%);
+  margin: 0;
+  padding: 0.6rem 0 0.3rem 1.5rem;
+}
+
+.user-container {
+  padding: 0.6rem;
+  background-color: colors.$background_paper;
+}
+
+.user {
+  width: 50%;
+}
