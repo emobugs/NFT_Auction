@@ -1,34 +1,40 @@
 @use "../../styles/colors";
 
-.user{
-    padding: 0.5rem 1rem;
+.user {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  column-gap: 1rem;
+
+  &-data {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    column-gap: 1rem;
-
-    &-data {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: baseline;
-    }
-    
-}
-
-.user-data{
+    align-items: center;
     padding: 0;
+  }
 }
 
 .name {
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0 !important;
-    padding: 0 !important;
+  max-height: fit-content;
+  flex: 1;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 !important;
+  padding: 0 !important;
+  // display hading center if there are no info prop
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
 }
 
-.info{
-    margin: 0;
-    font-size: 1rem;
-    color: colors.$secondary_main;
+.info {
+  flex: 1;
+  margin: 0;
+  font-size: 1rem;
+  color: colors.$secondary_main;
 }

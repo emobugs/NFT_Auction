@@ -1,4 +1,4 @@
-import styles from "./User.module.scss";
+import styles from "./User.mohdule.scss";
 
 import Avatar from "../avatar/Avatar";
 
@@ -14,7 +14,7 @@ export default function User({
       <Avatar size={size} url={avatar} />
       <div className={styles["user-data"]}>
         <h2 className={styles.name}>{name}</h2>
-        <p className={styles.info}>{info} items</p>
+        {info ? (<p className={styles.info}>{`${info} items`}</p>) : ""}
       </div>
     </div>
   );
