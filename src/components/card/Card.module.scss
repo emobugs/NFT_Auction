@@ -16,7 +16,6 @@
 .basic-info {
   display: flex;
   flex-direction: column;
-  flex: 1;
   flex: 1 1 auto;
 }
 
@@ -35,7 +34,8 @@
 }
 
 .likes {
-  // flex: 1;
+  justify-content: center;
+  align-items: center;
   width: fit-content;
   padding: 1rem 0.5rem !important;
   align-self: center;
@@ -51,7 +51,6 @@
 
 
 // Live card styling
-
 @mixin live-elements{
     background-color: colors.$secondary_main;
     color: colors.$background_paper;
