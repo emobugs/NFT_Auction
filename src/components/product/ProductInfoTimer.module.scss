@@ -1,0 +1,29 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+
+.product-info-timer {
+  @include mixins.flex(column);
+  width: 218px;
+  height: 118px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 30px;
+  overflow: hidden;
+  color: colors.$text_black;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0;
+  background-color: rgba(colors.$secondary_main, 90%);
+  text-transform: uppercase
+}
+
+.timer {
+  @include mixins.flex-c();
+  flex: 1;
+  background-color: colors.$secondary_main;
+}
