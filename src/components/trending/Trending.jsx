@@ -1,6 +1,6 @@
 import styles from "./Trending.module.scss";
 
-import { Container, Grid, FormControl, MenuItem, Select } from "@mui/material";
+import { Container, Grid, MenuItem, Select } from "@mui/material";
 import Card from "../card/Card";
 const titles = ["Clock", "DOGE", "BTC", "Litecoin"];
 
