@@ -1,8 +1,15 @@
-@mixin wrapper($ptb:1%, $plf : 8% ){
-    padding:$ptb $plf !important;
+@mixin wrapper($ptb: 1%, $plf: 8%) {
+  padding: $ptb $plf !important;
 }
 
-@mixin flex($dir){
-    display: flex;
-    flex-direction: $dir;
+@mixin flex($dir) {
+  display: flex;
+  flex-direction: $dir;
+}
+
+@mixin flex-c($dir : row, $jc: center, $ai: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
 }
