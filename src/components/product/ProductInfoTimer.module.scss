@@ -27,11 +27,9 @@
   @include mixins.flex-c();
   flex: 1;
   // background-color: colors.$secondary_main;
-  background-color: red;  
 }
 
 .active{
   background-color: colors.$secondary_main;
-  // background-color: red;
 }
 
