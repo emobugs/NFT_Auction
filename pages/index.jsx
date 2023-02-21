@@ -34,7 +34,7 @@ export default function Index() {
 
   return (
     <div>
-      <ProductInfoTimer timeEnd={100000} onTimeEnd={'set'}></ProductInfoTimer>
+      <ProductInfoTimer timeEnd={10000} onTimeEnd={() => {return 'completed timer'}}></ProductInfoTimer>
       {/* <ProductInfoCreator
          name= "ivan" avatar= "./images/avatar.png" verified = "false" 
       /> */}

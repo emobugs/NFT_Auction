@@ -10,7 +10,8 @@
   border-radius: 30px;
   overflow: hidden;
   color: colors.$text_black;
-}
+
+ }
 
 .title {
   display: flex;
@@ -19,15 +20,18 @@
   flex: 1;
   margin: 0;
   background-color: rgba(colors.$secondary_main, 90%);
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 .timer {
   @include mixins.flex-c();
   flex: 1;
-  background-color: colors.$secondary_main;
-
-  & .active{
-    background-color: colors.$secondary_main;
-  }
+  // background-color: colors.$secondary_main;
+  background-color: red;  
 }
+
+.active{
+  background-color: colors.$secondary_main;
+  // background-color: red;
+}
+
