@@ -31,14 +31,14 @@ export default function ProductInfo({
         <ProductInfoLikes className={styles.likes}></ProductInfoLikes>
       </Stack>
       <Grid container>
-        <Grid item md={7}>
+        <Grid item md={7} xs={7}>
           <ProductInfoCreator
             name={creator.name}
             avatar={creator.avatar}
             verified={creator.verified}
           ></ProductInfoCreator>
         </Grid>
-        <Grid item md={5}>
+        <Grid item md={5} xs={5}>
           <ProductInfoTimer
             timeEnd={timeEnd}
             onTimeEnd={onTimeEnd}
