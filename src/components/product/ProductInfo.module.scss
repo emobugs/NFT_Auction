@@ -1,0 +1,20 @@
+@use "../../styles/mixins";
+
+.product-info {
+    @include mixins.flex(column);
+}
+
+.stats {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.price {
+  width: 100%;
+  flex: 1 !important ;
+}
+
+.likes {
+  width: 100%;
+  flex: 1 !important;
+}

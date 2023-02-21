@@ -16,6 +16,7 @@ import dataFeatured from "../data/featured.json";
 import dataNfts from "../data/nfts.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
+import ProductInfo from "../src/components/product/ProductInfo";
 
 // import { useEffect, useState } from "react";
 
@@ -34,7 +35,21 @@ export default function Index() {
 
   return (
     <div>
-      <ProductInfoTimer timeEnd={10000} onTimeEnd={() => {return 'completed timer'}}></ProductInfoTimer>
+      <ProductInfo
+        title={"setaa"}
+        creator={{
+          name: "emo",
+          avatar: "./images.avatar.png",
+          verified: false,
+        }}
+        price={12321}
+        currency="Doge"
+        likes={21421}
+        onTimeEnd= {()=>{return 'completed'}}
+        timeEnd="12.22.28"
+        isLive= {true}
+      ></ProductInfo>
+      {/* <ProductInfoTimer timeEnd={10000} onTimeEnd={() => {return 'completed timer'}}></ProductInfoTimer> */}
       {/* <ProductInfoCreator
          name= "ivan" avatar= "./images/avatar.png" verified = "false" 
       /> */}
