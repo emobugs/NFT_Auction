@@ -17,6 +17,7 @@ import dataNfts from "../data/nfts.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
 import ProductInfo from "../src/components/product/ProductInfo";
+import ProductTabs from "../src/components/product/ProductTabs";
 
 // import { useEffect, useState } from "react";
 
@@ -35,7 +36,38 @@ export default function Index() {
 
   return (
     <div>
-      <ProductInfo
+      <ProductTabs text={'eifwnmoiew ienfi ewni ewni newi ni newi newin ew pkfew [pk'} 
+      bids={[
+        {
+          user: {
+             avatar : './images.avatar.png',
+             name: 'emo',
+             verified: false
+          },
+          amount: 100,
+          date: '2023-02-23T05:30:30'
+       },
+       {
+        user: {
+           avatar : './images.avatar.png',
+           name: 'ivan',
+           verified: false
+        },
+        amount: 25,
+        date: '2023-02-22T11:30:30'
+     },
+     {
+      user: {
+         avatar : './images.avatar.png',
+         name: 'petar',
+         verified: false
+      },
+      amount: 56,
+      date: '2023-02-22T08:30:30'
+   },
+      ]}></ProductTabs>
+
+      {/* <ProductInfo
         title={"setaa"}
         creator={{
           name: "emo",
@@ -48,7 +80,7 @@ export default function Index() {
         onTimeEnd= {()=>{return 'completed'}}
         timeEnd="12.22.28"
         isLive= {true}
-      ></ProductInfo>
+      ></ProductInfo> */}
       {/* <ProductInfoTimer timeEnd={10000} onTimeEnd={() => {return 'completed timer'}}></ProductInfoTimer> */}
       {/* <ProductInfoCreator
          name= "ivan" avatar= "./images/avatar.png" verified = "false" 

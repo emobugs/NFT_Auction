@@ -1,0 +1,20 @@
+@use "../../styles/colors";
+
+.product-tabs {
+}
+
+.tab-details {
+  background-color: red;
+}
+
+.tab-bids {
+  background-color: blue;
+}
+
+.even {
+  background-color: rgba(colors.$primary_main, 0.15);
+}
+
+.odd {
+  background-color: rgba(colors.$primary_main, 0.05);
+}
