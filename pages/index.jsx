@@ -34,6 +34,9 @@ export default function Index() {
   //   setNfts(dataNfts);
   // }, []);
 
+  let date; 
+  // date  = '2020-12-04T15:39:40.000Z';
+  date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
       <ProductTabs text={'eifwnmoiew ienfi ewni ewni newi ni newi newin ew pkfew [pk'} 
@@ -45,7 +48,7 @@ export default function Index() {
              verified: false
           },
           amount: 100,
-          date: '2023-02-23T05:30:30'
+      date: date
        },
        {
         user: {
@@ -54,7 +57,7 @@ export default function Index() {
            verified: false
         },
         amount: 25,
-        date: '2023-02-22T11:30:30'
+      date: date
      },
      {
       user: {
@@ -63,7 +66,7 @@ export default function Index() {
          verified: false
       },
       amount: 56,
-      date: '2023-02-22T08:30:30'
+      date: date
    },
       ]}></ProductTabs>
 
