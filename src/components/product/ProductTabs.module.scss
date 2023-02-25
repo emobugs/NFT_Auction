@@ -4,10 +4,6 @@ $rows : 10;
 
 .product-tabs {
   background-color: aquamarine;
-
-  [class^="table-row-"]{
-    color: blue;
-  }
 }
 
 .tab-details {
@@ -29,7 +25,16 @@ $rows : 10;
 .table-row-0{
   color: red;
 }
-
-@for $i from 0 through $rows {
-  .table-row-#{$i} { color: red; }
+.table-row-1{
+  color: red;
 }
+.table-row-2{
+  color: red;
+}
+.table-row-3{
+  color: red;
+}
+
+// @for $i from 0 through $rows {
+//   .table-row-#{$i} { color: red; }
+// }
