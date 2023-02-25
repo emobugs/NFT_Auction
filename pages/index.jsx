@@ -35,8 +35,8 @@ export default function Index() {
   // }, []);
 
   let date; 
-  // date  = '2020-12-04T15:39:40.000Z';
-  date = [2023, 1, 24, 23, 46, 5];
+  date  = '2023-02-25T20:39:40.000Z';
+  // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
       <ProductTabs text={'eifwnmoiew ienfi ewni ewni newi ni newi newin ew pkfew [pk'} 

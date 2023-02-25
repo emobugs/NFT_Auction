@@ -62,7 +62,8 @@ export default function ProductTabs({ text, bids }) {
                   <TableCell>{amount}</TableCell>
                   <TableCell>
                     <p>
-                      {formatDistance(new Date(...date), new Date(), {
+                      {console.log(new Date(parseISO(date)))}
+                      {formatDistance(new Date(parseISO(date)), new Date(), {
                         addSuffix: true,
                       })}
                     </p>
