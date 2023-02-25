@@ -49,6 +49,7 @@ export default function ProductTabs({ text, bids }) {
               return (
                 <TableRow
                 className={styles[`table-row-${i}`]}
+                // add evenOrOdd class for diff backColor
                 // className={`${styles[`table-row-${i}`]} ${
                 //   styles[`${EvenOrOdd(i)}`]
                 // }`}
