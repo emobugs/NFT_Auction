@@ -40,35 +40,36 @@ export default function Index() {
   return (
     <div>
       <ProductTabs text={'eifwnmoiew ienfi ewni ewni newi ni newi newin ew pkfew [pk'} 
-      bids={[
-        {
-          user: {
-             avatar : './images.avatar.png',
-             name: 'emo',
-             verified: false
-          },
-          amount: 100,
-      date: date
-       },
-       {
-        user: {
-           avatar : './images.avatar.png',
-           name: 'ivan',
-           verified: false
-        },
-        amount: 25,
-      date: date
-     },
-     {
-      user: {
-         avatar : './images.avatar.png',
-         name: 'petar',
-         verified: false
-      },
-      amount: 56,
-      date: date
-   },
-      ]}></ProductTabs>
+  //     bids={[
+  //       {
+  //         user: {
+  //            avatar : './images.avatar.png',
+  //            name: 'emo',
+  //            verified: false
+  //         },
+  //         amount: 100,
+  //     date: date
+  //      },
+  //      {
+  //       user: {
+  //          avatar : './images.avatar.png',
+  //          name: 'ivan',
+  //          verified: false
+  //       },
+  //       amount: 25,
+  //     date: date
+  //    },
+  //    {
+  //     user: {
+  //        avatar : './images.avatar.png',
+  //        name: 'petar',
+  //        verified: false
+  //     },
+  //     amount: 56,
+  //     date: date
+  //  },
+  //     ]}
+      ></ProductTabs>
 
       {/* <ProductInfo
         title={"setaa"}
