@@ -52,7 +52,6 @@ export default function ProductTabs({ text, bids }) {
                   styles[`${EvenOrOdd(i)}`]
                 }`}
                 >
-                  {console.log(i)}
                   <TableCell>
                     <User
                       name={name}

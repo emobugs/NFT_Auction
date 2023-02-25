@@ -1,7 +1,13 @@
 @use "../../styles/colors";
 
+$rows : 10;
+
 .product-tabs {
   background-color: aquamarine;
+
+  [class^="table-row-"]{
+    color: blue;
+  }
 }
 
 .tab-details {
@@ -22,4 +28,8 @@
 
 .table-row-0{
   color: red;
+}
+
+@for $i from 0 through $rows {
+  .table-row-#{$i} { color: red; }
 }
