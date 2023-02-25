@@ -48,10 +48,11 @@ export default function ProductTabs({ text, bids }) {
               } = bid;
               return (
                 <TableRow
-                  className={`${styles[`table-row-${i}`]} ${
-                    styles[`${EvenOrOdd(i)}`]
-                  }`}
+                className={`${styles[`table-row-${i}`]} ${
+                  styles[`${EvenOrOdd(i)}`]
+                }`}
                 >
+                  {console.log(i)}
                   <TableCell>
                     <User
                       name={name}
@@ -62,7 +63,6 @@ export default function ProductTabs({ text, bids }) {
                   <TableCell>{amount}</TableCell>
                   <TableCell>
                     <p>
-                      {console.log(new Date(parseISO(date)))}
                       {formatDistance(new Date(parseISO(date)), new Date(), {
                         addSuffix: true,
                       })}

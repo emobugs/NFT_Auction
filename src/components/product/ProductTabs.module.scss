@@ -1,7 +1,7 @@
 @use "../../styles/colors";
 
 .product-tabs {
-  background-color: colors.$primary_main;
+  background-color: aquamarine;
 }
 
 .tab-details {
@@ -18,4 +18,8 @@
 
 .odd {
   background-color: rgba(colors.$primary_main, 0.05);
+}
+
+.table-row-0{
+  color: red;
 }
