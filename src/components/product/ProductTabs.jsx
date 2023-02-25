@@ -2,7 +2,8 @@ import styles from "./ProductTabs.module.scss";
 
 import { Tabs, Tab } from "@mui/material";
 import { Table, TableRow, TableCell } from "@mui/material";
-import { formatDistance} from "date-fns";
+import { TabContext } from "@mui/lab";
+import { formatDistance, parseISO } from "date-fns";
 
 import { useState, useEffect } from "react";
 
@@ -29,43 +30,49 @@ export default function ProductTabs({ text, bids }) {
 
   return (
     <div className={styles["product-tabs"]}>
-      <Tabs value={value} onChange={handleTabs}>
-        <Tab className={styles["tab-details"]} label="Details"></Tab>
-        <Tab className={styles["tab-bids"]} label="Bids"></Tab>
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        {text}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Table>
-          {bids.map((bid, i) => {
-            const {
-              user: { name, avatar, verified },
-              amount,
-              date,
-            } = bid;
-
-            return (
-              <TableRow
-                className={`${styles[`table-row-${i}`]} ${
-                  styles[`${EvenOrOdd(i)}`]
-                }`}
-              >
-                <TableCell>
-                  <User name={name} avatar={avatar} verified={verified}></User>
-                </TableCell>
-                <TableCell>{amount}</TableCell>
-                <TableCell>
-                  <p>
-                     {formatDistance(new Date(...date), new Date(), { addSuffix: true })}
-                    {/* // {parseISO(date)} */}
-                  </p>
-                </TableCell>
-              </TableRow>
-            );
-          })}
-        </Table>
-      </TabPanel>
+      <TabContext value={value}>
+        <Tabs value={value} onChange={handleTabs}>
+          <Tab className={styles["tab-details"]} label="Details"></Tab>
+          <Tab className={styles["tab-bids"]} label="Bids"></Tab>
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          {text}
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <Table>
+            {bids.map((bid, i) => {
+              const {
+                user: { name, avatar, verified },
+                amount,
+                date,
+              } = bid;
+              return (
+                <TableRow
+                  className={`${styles[`table-row-${i}`]} ${
+                    styles[`${EvenOrOdd(i)}`]
+                  }`}
+                >
+                  <TableCell>
+                    <User
+                      name={name}
+                      avatar={avatar}
+                      verified={verified}
+                    ></User>
+                  </TableCell>
+                  <TableCell>{amount}</TableCell>
+                  <TableCell>
+                    <p>
+                      {formatDistance(new Date(...date), new Date(), {
+                        addSuffix: true,
+                      })}
+                    </p>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+          </Table>
+        </TabPanel>
+      </TabContext>
     </div>
   );
 }
