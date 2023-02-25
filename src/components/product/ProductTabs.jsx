@@ -48,9 +48,10 @@ export default function ProductTabs({ text, bids }) {
               } = bid;
               return (
                 <TableRow
-                className={`${styles[`table-row-${i}`]} ${
-                  styles[`${EvenOrOdd(i)}`]
-                }`}
+                className={styles[`table-row-${i}`]}
+                // className={`${styles[`table-row-${i}`]} ${
+                //   styles[`${EvenOrOdd(i)}`]
+                // }`}
                 >
                   <TableCell>
                     <User
