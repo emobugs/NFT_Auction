@@ -1,0 +1,21 @@
+@use "../../styles/colors";
+
+.product-actions{
+    background-color: colors.$background_default;
+}
+
+.button{
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.button-buy{
+    background-color: colors.$primary_main !important;
+    color: colors.$text_primary !important;
+}
+
+.button-bid{
+    background-color: transparent !important;
+    color: colors.$secondary_main !important;
+    border: 3px solid colors.$secondary_main !important;
+}
