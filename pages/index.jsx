@@ -18,6 +18,7 @@ import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
 import ProductInfo from "../src/components/product/ProductInfo";
 import ProductTabs from "../src/components/product/ProductTabs";
+import ProductActions from "../src/components/product/ProductActions";
 
 // import { useEffect, useState } from "react";
 
@@ -34,12 +35,20 @@ export default function Index() {
   //   setNfts(dataNfts);
   // }, []);
 
-  let date; 
-  date  = '2023-02-25T20:39:40.000Z';
+  // let date; 
+  // date  = '2023-02-25T20:39:40.000Z';
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProductTabs text={'eifwnmoiew ienfi ewni ewni newi ni newi newin ew pkfew [pk'} 
+      <ProductActions
+      isLive={true}
+      currency="ETH"
+      buyAmount={100}
+      bidAmount={20}
+      onBuy={()=> {console.log('buy')}}
+      onBid={() => {console.log('bid')}}>
+      </ProductActions>
+      {/* <ProductTabs text={'eifwnmoiew ienfi ewni ewni newi ni newi newin ew pkfew [pk'} 
       bids={[
         {
           user: {
@@ -69,7 +78,7 @@ export default function Index() {
       date: date
    },
       ]}
-      ></ProductTabs>
+      ></ProductTabs> */}
 
       {/* <ProductInfo
         title={"setaa"}
