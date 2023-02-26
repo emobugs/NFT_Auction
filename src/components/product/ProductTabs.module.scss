@@ -22,32 +22,32 @@ $rows : 10;
   background-color: rgba(colors.$primary_main, 0.05);
 }
 
-.table-row-0{
-  color: red !important;
-}
-.table-row-1{
-  color: red !important;
-}
-.table-row-2{
-  color: red !important;
-}
-.table-row-3{
-  color: red !important;
-}
-
-.table-row-4{
-  color: red !important;
-}
-.table-row-5{
-  color: red !important;
-}
-.table-row-6{
-  color: red !important;
-}
-.table-row-7{
-  color: red !important;
-}
-// enable it if there are more rows
-// @for $i from 0 through $rows {
-//   .table-row-#{$i} { color: red; }
+// .table-row-0{
+//   color: red !important;
 // }
+// .table-row-1{
+//   color: red !important;
+// }
+// .table-row-2{
+//   color: red !important;
+// }
+// .table-row-3{
+//   color: red !important;
+// }
+
+// .table-row-4{
+//   color: red !important;
+// }
+// .table-row-5{
+//   color: red !important;
+// }
+// .table-row-6{
+//   color: red !important;
+// }
+// .table-row-7{
+//   color: red !important;
+// }
+// enable it if there are more rows
+@for $i from 0 through $rows {
+  .table-row-#{$i} { color: red; }
+}

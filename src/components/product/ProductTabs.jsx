@@ -5,6 +5,8 @@ import { Table, TableBody, TableRow, TableCell } from "@mui/material";
 import { TabContext } from "@mui/lab";
 import { formatDistance, parseISO } from "date-fns";
 
+import classNames from "classnames";
+
 import { useState, useEffect } from "react";
 
 import User from "../user/User";
@@ -49,12 +51,14 @@ export default function ProductTabs({ text, bids }) {
                 } = bid;
                 return (
                   <TableRow
-                    className={styles[`table-row-${i}`]}
+                    className={classNames({ [`table-row-${i}`]: true })}
+                    // className={styles[`table-row-${i}`]}
                     // add evenOrOdd class for diff backColor
                     // className={`${styles[`table-row-${i}`]} ${
                     //   styles[`${EvenOrOdd(i)}`]
                     // }`}
                   >
+                    {/* {console.log(classNames(styles[`table-row-${i}`]))} */}
                     <TableCell>
                       <User
                         name={name}
