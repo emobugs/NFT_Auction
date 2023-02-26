@@ -14,6 +14,7 @@ import User from "../user/User";
 export default function ProductTabs({ text, bids }) {
   // set initial value with first tab index
   const [value, setValue] = useState(0);
+  const [evenOrOdd, setEvenOrOdd] = useState('odd');
 
   // change tab index on click
   const handleTabs = (e, index) => {
@@ -28,7 +29,7 @@ export default function ProductTabs({ text, bids }) {
 
   useEffect(() => {}, []);
 
-  const EvenOrOdd = (i) => ((i + 1) % 2 === 0 ? "even" : "odd");
+  const EvenOrOdd = (i) => ((i + 1) % 2 === 0 ? 'even' : 'odd');
 
   return (
     <div className={styles["product-tabs"]}>
@@ -51,14 +52,11 @@ export default function ProductTabs({ text, bids }) {
                 } = bid;
                 return (
                   <TableRow
-                    className={classNames({ [`table-row-${i}`]: true })}
-                    // className={styles[`table-row-${i}`]}
-                    // add evenOrOdd class for diff backColor
-                    // className={`${styles[`table-row-${i}`]} ${
-                    //   styles[`${EvenOrOdd(i)}`]
-                    // }`}
+                  className={classNames({
+                    [styles[`table-row-${i}`]]: true,
+                    [styles[EvenOrOdd(i)]] : true 
+                  })}
                   >
-                    {/* {console.log(classNames(styles[`table-row-${i}`]))} */}
                     <TableCell>
                       <User
                         name={name}
