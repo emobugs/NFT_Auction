@@ -14,26 +14,29 @@ export default function ProductActions({
   return (
     <div className={styles["product-actions"]}>
       <Grid container>
-        <Grid item md={7}>
+        <Grid item md={7} xs={7}>
           <Button
             className={classNames({
               [styles["button"]]: true,
               [styles["button-buy"]]: true,
             })}
+            variant='contained'
             disabled={!isLive}
             onClick={onBuy}
           >
             Buy for {buyAmount} {currency}
           </Button>
         </Grid>
-        <Grid item md={5}>
+        <Grid item md={5} xs={5}>
           <Button
             className={classNames({
               [styles["button"]]: true,
               [styles["button-bid"]]: true,
             })}
+            variant='outlined'
+            color="success"
             disabled={!isLive}
-onClick={onBid}
+            onClick={onBid}
           >
             Place Bid for {bidAmount} {currency}
           </Button>
