@@ -16,11 +16,14 @@ import dataFeatured from "../data/featured.json";
 import dataNfts from "../data/nfts.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
+
+import dataProduct from "../data/product.json";
 import ProductInfo from "../src/components/product/ProductInfo";
 import ProductTabs from "../src/components/product/ProductTabs";
 import ProductActions from "../src/components/product/ProductActions";
+import ProductContainer from "../src/components/product/ProductContainer";
 
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Index() {
   // const [featureCards, setFeatureCards] = useState([]);
@@ -28,26 +31,58 @@ export default function Index() {
   // const [dataCollectors, setDataCollectors] = useState([]);
   // const [nfts, setNfts] = useState([]);
 
-  // useEffect(() => {
-  //   setFeatureCards(dataFeatured);
-  //   setTrendingCards(dataTrending);
-  //   setDataCollectors(dataUsers);
-  //   setNfts(dataNfts);
-  // }, []);
+  const [productData, setProductData] = useState([]);
 
-  // let date; 
+  useEffect(() => {
+    //   setFeatureCards(dataFeatured);
+    //   setTrendingCards(dataTrending);
+    //   setDataCollectors(dataUsers);
+    //   setNfts(dataNfts);
+    setProductData(dataProduct);
+  }, []);
+
+  // let date;
   // date  = '2023-02-25T20:39:40.000Z';
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProductActions
+      <ProductContainer
+        name="Shallow Son"
+        owner={{
+          username: "emo",
+          verified: true,
+          avatar: {
+            url: "./images/avatar.png",
+          },
+        }}
+        price={100}
+        currency="ETH"
+        likes={1500}
+        // auction_end={5000}
+        onTimeEnd={() => "Time out"}
+        details="some details"
+        source={{url:"https://source.unsplash.com/random"}}
+        bids={[
+          {
+             user:{
+                info: "user info",
+                name: 'emo',
+                verified: false,
+                avatar: "./images/avatar.png"
+             },
+             date: '2023-02-25T20:39:40.000Z',
+             amount: 150
+          }
+       ]}
+      ></ProductContainer>
+      {/* <ProductActions
       isLive={true}
       currency="ETH"
       buyAmount={100}
       bidAmount={20}
       onBuy={()=> {console.log('buy')}}
       onBid={() => {console.log('bid')}}>
-      </ProductActions>
+      </ProductActions> */}
       {/* <ProductTabs text={'eifwnmoiew ienfi ewni ewni newi ni newi newin ew pkfew [pk'} 
       bids={[
         {

@@ -1,7 +1,21 @@
+@use "../../styles/colors";
+
 .product-info-likes{
-    background-color: orange;
+    // background-color: orange;
+    overflow: hidden;
+    background: rgba(36, 242, 94, 0.1);
 }
 
 .likes{
+    border-radius: 7px !important;
+    color: colors.$secondary_main !important;
+    padding: 0.2rem 0.3rem !important;
+    border: 2px solid colors.$secondary_main !important;
+    font-size: 1rem !important;
     text-align: center;
+
+    & .fav-icon{
+        font-size: 1rem;
+        color: colors.$secondary_main !important;
+    }
 }

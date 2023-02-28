@@ -22,23 +22,26 @@ export default function ProductInfo({
   return (
     <div className={styles["product-info"]}>
       <ProductInfoTitle text={title}></ProductInfoTitle>
-      {isLive && <ProductInfoStatus></ProductInfoStatus>}
       <Stack className={styles.stats} direction={"row"}>
         <ProductInfoPrice
           className={styles.price}
+          amount={price}
           currency={currency}
-        ></ProductInfoPrice>
-        <ProductInfoLikes className={styles.likes}></ProductInfoLikes>
+          ></ProductInfoPrice>
+          <Stack className={styles['live-likes-stack']} direction={"row"}>
+          {isLive && <ProductInfoStatus></ProductInfoStatus>}
+        <ProductInfoLikes className={styles.likes} amount={likes}></ProductInfoLikes>
+          </Stack>
       </Stack>
-      <Grid container>
-        <Grid item md={7} xs={7}>
+      <Grid className={styles['product-creator-grid']} container gridAutoColumns={true}>
+        <Grid className={styles['product-creator-item']} item md={7} xs={7}>
           <ProductInfoCreator
-            name={creator.name}
+            name={creator.username}
             avatar={creator.avatar}
             verified={creator.verified}
           ></ProductInfoCreator>
         </Grid>
-        <Grid item md={5} xs={5}>
+        <Grid className={styles['product-creator-item']} item md={5} xs={5}>
           <ProductInfoTimer
             timeEnd={timeEnd}
             onTimeEnd={onTimeEnd}

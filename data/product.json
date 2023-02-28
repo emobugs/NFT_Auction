@@ -1,0 +1,30 @@
+{
+    "name": "emo",
+    "owner":{
+       "username": "emo",
+       "verified": true,
+       "avatar":{
+          "url": "./images/avatar.png"
+       }
+    },
+    "price": 200,
+    "currency": "ETH",
+    "likes": 100,
+    "auction_end": "Some data",
+    "details": "details",
+    "source":{
+       "url": "some url here"
+    },
+    "bids":[
+       {
+          "user":{
+             "info": "user info",
+             "name": "emo",
+             "verified": true,
+             "avatar": "./images/avatar.png"
+          },
+          "date": "2023-02-25T20:39:40.000Z",
+          "amount": 150
+       }
+    ]
+    }
