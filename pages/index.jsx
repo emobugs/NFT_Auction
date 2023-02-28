@@ -46,7 +46,7 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProductContainer
+      {/* <ProductContainer
         name="Shallow Son"
         owner={{
           username: "emo",
@@ -78,7 +78,7 @@ export default function Index() {
              amount: 150
           }
        ]}
-      ></ProductContainer>
+      ></ProductContainer> */}
       {/* <ProductActions
       isLive={true}
       currency="ETH"

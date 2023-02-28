@@ -25,14 +25,11 @@ export default function ProductContainer({
   bidAmount,
   onBuy,
   onBid,
-  text,
+  text
 }) {
   return (
-      <Grid
-        className={classNames({ [styles["product-container"]]: true })}
-        container
-        gridAutoFlow={true}
-      >
+    <div className={classNames({ [styles["product-container"]]: true })}>
+      <Grid className={styles["grid-cnt"]} container gridAutoFlow={true}>
         <Grid item md={6} xs={6}>
           <ProductImage url={source.url}></ProductImage>
         </Grid>
@@ -60,5 +57,6 @@ export default function ProductContainer({
           ></ProductActions>
         </Grid>
       </Grid>
+    </div>
   );
 }
