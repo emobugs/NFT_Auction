@@ -24,7 +24,8 @@ export default function ProductContainer({
   buyAmount,
   bidAmount,
   onBuy,
-  onBid
+  onBid,
+  text
 }) {
   return (
     <div className={classNames({ [styles["product-container"]]: true })}>
@@ -51,7 +52,7 @@ export default function ProductContainer({
             bidAmount={bidAmount}
             onBid={onBid}
             onBuy={onBuy}
-            text={details}
+            text={text}
           ></ProductActions>
         </Grid>
       </Grid>
