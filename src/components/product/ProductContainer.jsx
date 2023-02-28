@@ -1,6 +1,6 @@
 import styles from "./ProductContainer.module.scss";
 
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
@@ -24,16 +24,15 @@ export default function ProductContainer({
   buyAmount,
   bidAmount,
   onBuy,
-  onBid,
-  text
+  onBid
 }) {
   return (
-    <div className={classNames({ [styles["product-container"]]: true })}>
+    <Container className={classNames({ [styles["product-container"]]: true })}>
       <Grid className={styles["grid-cnt"]} container gridAutoFlow={true}>
-        <Grid item md={6} xs={6}>
+        <Grid item xs={6}>
           <ProductImage url={source.url}></ProductImage>
         </Grid>
-        <Grid item md={5} xs={5}>
+        <Grid item xs={5}>
           <ProductInfo
             title={name}
             creator={owner}
@@ -44,7 +43,7 @@ export default function ProductContainer({
             isLive={true}
             onTimeEnd={onTimeEnd}
           ></ProductInfo>
-          <ProductTabs bids={bids}></ProductTabs>
+          <ProductTabs bids={bids} text={details}></ProductTabs>
           <ProductActions
             isLive={isLive}
             currency={currency}
@@ -52,11 +51,10 @@ export default function ProductContainer({
             bidAmount={bidAmount}
             onBid={onBid}
             onBuy={onBuy}
-            text={text}
             bids={bids}
           ></ProductActions>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 }
