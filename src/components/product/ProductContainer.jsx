@@ -7,49 +7,32 @@ import ProductActions from "./ProductActions";
 import ProductInfo from "./ProductInfo";
 import ProductTabs from "./ProductTabs";
 
-export default function ProductContainer({
-  isLive,
-  name,
-  owner,
-  price,
-  currency,
-  likes,
-  auction_end,
-  details,
-  source,
-  bids,
-  buyAmount,
-  bidAmount,
-  onBuy,
-  onBid
-}) {
+export default function ProductContainer({ product }) {
   return (
-    <div
-      className={classNames(styles["product-container"])}
-    >
+    <div className={classNames(styles["product-container"])}>
       <Grid container spacing={6}>
         <Grid item xs={6}>
-          <ProductImage url={source?.url} />
+          <ProductImage url={product?.source?.url} />
         </Grid>
         <Grid item xs={5}>
           <ProductInfo
-            title={name}
-            creator={owner}
-            price={price}
-            currency={currency}
-            likes={likes}
-            timeEnd={auction_end}
-            isLive={isLive}
-            onTimeEnd={auction_end}
+            title={product?.name}
+            creator={product?.owner}
+            price={product?.price}
+            currency={product?.currency}
+            likes={product?.likes}
+            timeEnd={product?.auction_end}
+            // isLive={product?.isLive}  use the !completed to set to live
+            onTimeEnd={product?.auction_end}
           />
-          <ProductTabs bids={bids} text={details} />
+          <ProductTabs bids={product?.bids} text={product?.details} />
           <ProductActions
-            isLive={isLive}
-            currency={currency}
-            buyAmount={buyAmount}
-            bidAmount={bidAmount}
-            onBid={onBid}
-            onBuy={onBuy}
+            // isLive={auction_end}
+            currency={product?.currency}
+            // buyAmount={product?.bids}
+            // bidAmount={product?.bids}
+            // onBid={product?.bids}
+            // onBuy={product?.bids}
           />
         </Grid>
       </Grid>
