@@ -39,7 +39,7 @@ export default function ProductActions({
             disabled={!isLive}
             onClick={onBid}
           >
-            Place Bid for {bidAmount} {currency}
+            Place Bid for {text} {bidAmount} {currency}
           </Button>
         </Grid>
       </Grid>
