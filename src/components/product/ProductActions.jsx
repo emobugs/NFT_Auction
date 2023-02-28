@@ -10,7 +10,8 @@ export default function ProductActions({
   bidAmount,
   onBuy,
   onBid,
-  text
+  text,
+  bids
 }) {
   return (
     <div className={styles["product-actions"]}>

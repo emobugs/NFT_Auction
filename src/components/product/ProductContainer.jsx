@@ -53,6 +53,7 @@ export default function ProductContainer({
             onBid={onBid}
             onBuy={onBuy}
             text={text}
+            bids={bids}
           ></ProductActions>
         </Grid>
       </Grid>
