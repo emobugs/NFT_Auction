@@ -20,6 +20,11 @@ export default function ProductContainer({
   details,
   source,
   bids,
+  isLive,
+  buyAmount,
+  bidAmount,
+  onBuy,
+  onBid
 }) {
   return (
     <div className={classNames({ [styles["product-container"]]: true })}>
