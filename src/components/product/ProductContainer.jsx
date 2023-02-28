@@ -24,8 +24,7 @@ export default function ProductContainer({
   onBid
 }) {
   return (
-    <Container
-      maxWidth={false}
+    <div
       className={classNames(styles["product-container"])}
     >
       <Grid container spacing={6}>
@@ -54,6 +53,6 @@ export default function ProductContainer({
           />
         </Grid>
       </Grid>
-    </Container>
+    </div>
   );
 }
