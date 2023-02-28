@@ -23,7 +23,7 @@ export default function ProductContainer({
 }) {
   return (
     <div className={classNames({ [styles["product-container"]]: true })}>
-      <Grid className={styles['grid-cnt']} container gridAutoFlow={true}>
+      <Grid className={styles["grid-cnt"]} container gridAutoFlow={true}>
         <Grid item md={6} xs={6}>
           <ProductImage url={source.url}></ProductImage>
         </Grid>
@@ -39,7 +39,15 @@ export default function ProductContainer({
             onTimeEnd={onTimeEnd}
           ></ProductInfo>
           <ProductTabs bids={bids}></ProductTabs>
-          <ProductActions></ProductActions>
+          <ProductActions
+            isLive={isLive}
+            currency={currency}
+            buyAmount={price}
+            bidAmount={bidAmount}
+            onBid={onBid}
+            onBuy={onBuy}
+            text={details}
+          ></ProductActions>
         </Grid>
       </Grid>
     </div>

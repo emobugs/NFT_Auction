@@ -33,7 +33,7 @@ export default function ProductInfo({
         <ProductInfoLikes className={styles.likes} amount={likes}></ProductInfoLikes>
           </Stack>
       </Stack>
-      <Grid className={styles['product-creator-grid']} container gridAutoColumns={true}>
+      <Grid className={styles['product-creator-grid']} container gap={1} gridAutoColumns={true}>
         <Grid className={styles['product-creator-item']} item md={7} xs={7}>
           <ProductInfoCreator
             name={creator.username}

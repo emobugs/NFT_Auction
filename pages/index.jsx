@@ -58,9 +58,13 @@ export default function Index() {
         price={100}
         currency="ETH"
         likes={1500}
-        // auction_end={5000}
+        auction_end={5000}
         onTimeEnd={() => "Time out"}
         details="some details"
+        isLive={false}
+        bidAmount={300}
+        onBid={''}
+        onBuy={''}
         source={{url:"https://source.unsplash.com/random"}}
         bids={[
           {

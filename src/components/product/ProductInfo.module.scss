@@ -24,16 +24,8 @@
   gap: 1rem;
 }
 
-.product-creator-grid {
-  align-items: stretch !important;
-  justify-content: space-between;
-  gap: 1rem;
-}
 
 .product-creator-item {
   border-radius: 15px;
-  align-items: stretch !important;
-  flex: 1 1 auto !important;
-  height: 100% !important;
   background-color: colors.$background_paper;
 }
