@@ -1,7 +1,10 @@
+@use "../../styles/colors";
 @use "../../styles/mixins";
 
+// vertical
 .product-info {
     @include mixins.flex(column);
+    gap: 2rem;
 }
 
 .stats {
@@ -14,7 +17,23 @@
   flex: 1 !important ;
 }
 
-.likes {
+.live-likes-stack {
   width: 100%;
   flex: 1 !important;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.product-creator-grid {
+  align-items: stretch !important;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.product-creator-item {
+  border-radius: 15px;
+  align-items: stretch !important;
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  background-color: colors.$background_paper;
 }

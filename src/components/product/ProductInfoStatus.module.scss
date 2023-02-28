@@ -1,7 +1,22 @@
-.product-info-status{
-    background-color: red;
+@use "../../styles/colors";
+
+.product-info-status {
+  background-color: colors.$secondary_main;
+    border-radius: 7px !important;
+
+  .status {
+    padding: 0.2rem 0.3rem !important;
+    font-size: 1rem;
+    color: colors.$background_paper !important;
+    font-weight: bold !important;
+  }
+
+  & .circle-icon {
+    font-size: 1rem;
+    color: colors.$background_paper !important;
+  }
 }
 
-.status{
-    color: green;
+.status {
+  color: green;
 }

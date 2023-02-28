@@ -1,17 +1,14 @@
 @use "../../styles/colors";
+@use "../../styles/mixins";
 
 .product-info-creator {
-  width: 340px;
-  margin: auto;
-  // width: 50%;
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex(column);
   border-radius: 30px;
   overflow: hidden;
 }
 
 .title {
-  background-color: rgba(colors.$primary_main, 10%);
+  background-color: rgba(colors.$primary_main, 0.1);
   margin: 0;
   padding: 0.6rem 0 0.3rem 1.5rem;
 }
@@ -22,5 +19,5 @@
 }
 
 .user {
-  width: 50%;
+  width: 50% !important;
 }

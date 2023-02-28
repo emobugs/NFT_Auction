@@ -3,33 +3,47 @@
 
 .product-info-timer {
   @include mixins.flex(column);
-  width: 218px;
-  height: 118px;
-  margin: auto;
-  margin-top: 50px;
   border-radius: 30px;
   overflow: hidden;
   color: colors.$text_black;
-
- }
+}
 
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  flex: 1 1 auto;
   margin: 0;
   background-color: rgba(colors.$secondary_main, 90%);
   text-transform: uppercase;
 }
 
 .timer {
-  @include mixins.flex-c();
-  flex: 1;
-  // background-color: colors.$secondary_main;
+  @include mixins.flex-c() ;
+  justify-content: center !important;
+  height: 100%;
+  flex: 2 2 auto;
+  font-size: 3rem !important;
+  text-align: center !important;
+  padding: 1rem;
 }
 
-.active{
+.empty-timer{
+  background-color: colors.$background_paper;
+}
+
+.completed{
+  display: block;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.span{
+  display: block;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.active {
   background-color: colors.$secondary_main;
 }
-

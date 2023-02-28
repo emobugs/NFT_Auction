@@ -1,15 +1,17 @@
 import styles from "./ProductInfoTimer.module.scss";
 
 import Countdown from "react-countdown";
-import classNames from "classnames";
-import { ClassNames } from "@emotion/react";
 
 export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
+
+
+  const Completed = () => <span className={styles.completed}>{onTimeEnd()}</span>
   const renderer = ({ hours, minutes, seconds, completed }) => {
+    console.log(completed);
     return completed ? (
-      onTimeEnd()
+      <Completed className={styles.completed}/>
     ) : (
-      <span>
+      <span className={styles.span}>
         {hours}:{minutes}:{seconds}
       </span>
     );
@@ -20,18 +22,11 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
       <div className={styles["product-info-timer"]}>
         <h3 className={styles.title}>Ends in</h3>
         <div className={`${styles.timer}, ${styles.active}`}>
-          <Countdown
-            date={Date.now() + timeEnd}
-            renderer={renderer}
-            onComplete={onTimeEnd}
-            onTick={() => {
-              console.log("tick");
-            }}
-          ></Countdown>
+          <Countdown className={styles.countdown} date={Date.now() + timeEnd}  renderer={renderer}/>
         </div>
       </div>
     );
   };
 
-  return timeEnd ? renderComp() : <div></div>;
+  return timeEnd ? renderComp() : <div className={styles['empty-timer']}></div>;
 }

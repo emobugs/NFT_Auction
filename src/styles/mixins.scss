@@ -8,8 +8,8 @@
 }
 
 @mixin flex-c($dir : row, $jc: center, $ai: center) {
-  display: flex;
-  flex-direction: $dir;
-  justify-content: $jc;
-  align-items: $ai;
+  display: flex !important;
+  flex-direction: $dir !important;
+  justify-content: $jc !important;
+  align-items: $ai !important;
 }
