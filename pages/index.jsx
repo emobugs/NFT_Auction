@@ -47,6 +47,7 @@ export default function Index() {
   return (
     <div>
       <ProductContainer
+      isLive={false}
         name="Shallow Son"
         owner={{
           username: "emo",
@@ -61,7 +62,6 @@ export default function Index() {
         auction_end={5000}
         onTimeEnd={() => "Time out"}
         details="some details"
-        isLive={false}
         bidAmount={300}
         onBid={''}
         onBuy={''}

@@ -1,43 +1,31 @@
 import styles from "./ProductInfoTimer.module.scss";
-
+import { Grid, Typography } from "@mui/material";
+import classNames from "classnames";
+import React from "react";
 import Countdown from "react-countdown";
-import { Grid } from "@mui/material";
 
 export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
-  const Completed = () => (
-    <span className={styles.completed}>{onTimeEnd()}</span>
-  );
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    console.log(completed);
-    return completed ? (
-      <Completed className={styles.completed} />
-    ) : (
-      <span className={styles.span}>
-        {hours}:{minutes}:{seconds}
-      </span>
-    );
-  };
-
-  const renderComp = () => {
-    return (
-      <div className={styles["product-info-timer"]}>
-        <Grid container direction={"column"} sx={{height: "100%" ,gap:"0"}} >
-          <Grid item md={4}>
-            <h3 className={styles.title}>Ends in</h3>
+  return (
+    <div className={classNames(styles["product-info-timer"])}>
+      {timeEnd && (
+        <Grid container>
+          <Grid item xs={12} className={classNames(styles["title-container"])}>
+            <Typography variant="h4" className={classNames(styles["title"])}>
+              ends in
+            </Typography>
           </Grid>
-          <Grid item md={8}>
-            <div className={`${styles.timer}, ${styles.active}`}>
-              <Countdown
-                className={styles["timer-countdown"]}
-                date={Date.now() + timeEnd}
-                renderer={renderer}
-              />
-            </div>
+          <Grid
+            item
+            xs={12}
+            className={classNames({
+              [styles["timer"]]: true,
+              [styles["active"]]: timeEnd ? true : false,
+            })}
+          >
+            <Countdown timeLeft={timeEnd} onTimeEnd={onTimeEnd} />
           </Grid>
         </Grid>
-      </div>
-    );
-  };
-
-  return timeEnd ? renderComp() : <div className={styles["empty-timer"]}></div>;
+      )}
+    </div>
+  );
 }

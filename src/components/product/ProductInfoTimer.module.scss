@@ -1,43 +1,29 @@
-@use "../../styles/colors";
-@use "../../styles/mixins";
+@use '../../styles/colors.scss';
 
-.product-info-timer {
-  @include mixins.flex(column);
-  border-radius: 30px;
-  overflow: hidden;
-  height: 100% !important;
-  color: colors.$text_black;
+.product-info-timer{
+    border-radius: 18px;
+    overflow: hidden;
+}
+.title{
+    color: #000000;
+    font-size: .7rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.title {
-  @include mixins.flex-c;
-  margin: 0;
-  background-color: rgba(colors.$secondary_main, 90%);
-  text-transform: uppercase;
-  height: 100%;
+.active{
+    background-color: colors.$secondary_main;
 }
 
-.timer {
-  @include mixins.flex-c() ;
+.title-container{
+    background-color: rgba(colors.$secondary_main, 90%);
 }
 
-.empty-timer{
-  background-color: colors.$background_paper;
-}
-
-.completed{
-  display: block;
-  font-size: 3rem;
-  text-align: center;
-}
-
-.span{
-  display: block;
-  font-size: 3rem;
-  text-align: center;
-  height: 100% !important;
-}
-
-.active {
-  background-color: colors.$secondary_main;
+.timer{
+    
+    color: #000000;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: .8rem;
 }

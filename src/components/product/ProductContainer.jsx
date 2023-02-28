@@ -8,6 +8,7 @@ import ProductInfo from "./ProductInfo";
 import ProductTabs from "./ProductTabs";
 
 export default function ProductContainer({
+  isLive,
   name,
   owner,
   price,
@@ -17,6 +18,10 @@ export default function ProductContainer({
   details,
   source,
   bids,
+  buyAmount,
+  bidAmount,
+  onBuy,
+  onBid
 }) {
   return (
     <Container
@@ -35,17 +40,17 @@ export default function ProductContainer({
             currency={currency}
             likes={likes}
             timeEnd={auction_end}
-            isLive={auction_end}
+            isLive={isLive}
             onTimeEnd={auction_end}
           />
           <ProductTabs bids={bids} text={details} />
           <ProductActions
-            isLive={auction_end}
+            isLive={isLive}
             currency={currency}
-            buyAmount={bids}
-            bidAmount={bids}
-            onBid={bids}
-            onBuy={bids}
+            buyAmount={buyAmount}
+            bidAmount={bidAmount}
+            onBid={onBid}
+            onBuy={onBuy}
           />
         </Grid>
       </Grid>
