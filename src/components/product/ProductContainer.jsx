@@ -48,7 +48,7 @@ export default function ProductContainer({
           <ProductActions
             isLive={isLive}
             currency={currency}
-            buyAmount={price}
+            buyAmount={buyAmount}
             bidAmount={bidAmount}
             onBid={onBid}
             onBuy={onBuy}
