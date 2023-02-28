@@ -33,7 +33,7 @@ export default function ProductContainer({
     >
       <Grid container spacing={6}>
         <Grid item xs={6}>
-          <ProductImage text={source?.url} />
+          <ProductImage url={source?.url} />
         </Grid>
         <Grid item xs={5}>
           <ProductInfo
