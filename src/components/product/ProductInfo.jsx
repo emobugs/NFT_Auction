@@ -34,14 +34,14 @@ export default function ProductInfo({
           </Stack>
       </Stack>
       <Grid className={styles['product-creator-grid']} container gap={1} gridAutoColumns={true}>
-        <Grid className={styles['product-creator-item']} item md={7} xs={7}>
+        <Grid className={styles['product-creator-item']} item xs={7}>
           <ProductInfoCreator
-            name={creator.username}
-            avatar={creator.avatar}
-            verified={creator.verified}
+            name={creator?.username}
+            avatar={creator?.avatar}
+            verified={creator?.verified}
           ></ProductInfoCreator>
         </Grid>
-        <Grid className={styles['product-creator-item']} item md={5} xs={5}>
+        <Grid className={styles['product-creator-item']} item xs={5}>
           <ProductInfoTimer
             timeEnd={timeEnd}
             onTimeEnd={onTimeEnd}
