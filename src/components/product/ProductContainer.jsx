@@ -24,13 +24,16 @@ export default function ProductContainer({
   buyAmount,
   bidAmount,
   onBuy,
-  onBid
+  onBid,
 }) {
   return (
-    <Container className={classNames({ [styles["product-container"]]: true })}>
-      <Grid className={styles["grid-cnt"]} container gridAutoFlow={true}>
+    <Container
+      maxWidth={false}
+      className={classNames(styles["product-container"])}
+    >
+      <Grid container spacing={6}>
         <Grid item xs={6}>
-          <ProductImage url={source.url}></ProductImage>
+          <ProductImage text={source?.url} />
         </Grid>
         <Grid item xs={5}>
           <ProductInfo
@@ -40,19 +43,18 @@ export default function ProductContainer({
             currency={currency}
             likes={likes}
             timeEnd={auction_end}
-            isLive={true}
-            onTimeEnd={onTimeEnd}
-          ></ProductInfo>
-          <ProductTabs bids={bids} text={details}></ProductTabs>
+            isLive={auction_end}
+            onTimeEnd={auction_end}
+          />
+          <ProductTabs bids={bids} text={details} />
           <ProductActions
-            isLive={isLive}
+            isLive={auction_end}
             currency={currency}
-            buyAmount={buyAmount}
-            bidAmount={bidAmount}
-            onBid={onBid}
-            onBuy={onBuy}
-            bids={bids}
-          ></ProductActions>
+            buyAmount={bids}
+            bidAmount={bids}
+            onBid={bids}
+            onBuy={bids}
+          />
         </Grid>
       </Grid>
     </Container>
