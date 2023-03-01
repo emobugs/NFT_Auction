@@ -46,40 +46,8 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProductContainer
-      isLive={false}
-        name="Shallow Son"
-        owner={{
-          username: "emo",
-          verified: true,
-          avatar: {
-            url: "./images/avatar.png",
-          },
-        }}
-        price={100}
-        currency="ETH"
-        likes={1500}
-        auction_end={5000}
-        onTimeEnd={() => "Time out"}
-        details="some details"
-        bidAmount={300}
-        onBid={''}
-        onBuy={''}
-        source={{url:"https://source.unsplash.com/random"}}
-        bids={[
-          {
-             user:{
-                info: "user info",
-                name: 'emo',
-                verified: false,
-                avatar: "./images/avatar.png"
-             },
-             date: '2023-02-25T20:39:40.000Z',
-             amount: 150
-          }
-       ]}
-      ></ProductContainer>
-      {/* <ProductActions
+     
+           {/* <ProductActions
       isLive={true}
       currency="ETH"
       buyAmount={100}
