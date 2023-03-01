@@ -1,0 +1,10 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+
+.profile-user{
+    width: 30%;
+    @include mixins.flex(column);
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}

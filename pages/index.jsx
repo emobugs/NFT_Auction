@@ -25,6 +25,7 @@ import ProductContainer from "../src/components/product/ProductContainer";
 import ProfileHero from "../src/components/profile/ProfileHero";
 
 import { useEffect, useState } from "react";
+import ProfileUser from "../src/components/profile/ProfileUser";
 
 export default function Index() {
   // const [featureCards, setFeatureCards] = useState([]);
@@ -47,7 +48,9 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProfileHero image="https://source.unsplash.com/random"></ProfileHero>
+      <ProfileUser name="emo" info="lorem ipsum dolor sit ament few efwmf weok[pll/'c vewfew niuniunoin jnionoinoinl nuinoin unyfcrxtrc tcc5tvytf"
+      avatar="./images/avatar.png" verified={true}></ProfileUser>
+      {/* <ProfileHero image="https://source.unsplash.com/random"></ProfileHero> */}
      
            {/* <ProductActions
       isLive={true}
