@@ -1,0 +1,15 @@
+.profile-hero{
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.image{
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // height: max-content;
+}

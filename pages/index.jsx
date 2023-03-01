@@ -22,6 +22,7 @@ import ProductInfo from "../src/components/product/ProductInfo";
 import ProductTabs from "../src/components/product/ProductTabs";
 import ProductActions from "../src/components/product/ProductActions";
 import ProductContainer from "../src/components/product/ProductContainer";
+import ProfileHero from "../src/components/profile/ProfileHero";
 
 import { useEffect, useState } from "react";
 
@@ -46,6 +47,7 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
+      <ProfileHero image="https://source.unsplash.com/random"></ProfileHero>
      
            {/* <ProductActions
       isLive={true}
