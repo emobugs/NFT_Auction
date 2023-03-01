@@ -4,7 +4,7 @@ import Hero from "../../src/components/hero/Hero"
 import Description from "../../src/components/description/Description"
 
 
-export default function index({text}) {
+export default function index() {
   return (
     <div>
         <Header></Header>
