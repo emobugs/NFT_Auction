@@ -7,10 +7,10 @@ import Description from "../../src/components/description/Description"
 export default function index({text}) {
   return (
     <div>
-        <Header/>
-        <Hero text={text}/>
-        <Description text={text} image={image}/>
-        <Footer/>
+        <Header></Header>
+        <Hero text={text}></Hero>
+        <Description text={text} image={image}></Description>
+        <Footer></Footer>
     </div>
   )
 }
