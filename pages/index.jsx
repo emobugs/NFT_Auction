@@ -16,6 +16,7 @@ import dataFeatured from "../data/featured.json";
 import dataNfts from "../data/nfts.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
+import dataProfileFilters from "../data/filtersProfile.json";
 
 import dataProduct from "../data/product.json";
 import ProductInfo from "../src/components/product/ProductInfo";
@@ -26,21 +27,23 @@ import ProfileHero from "../src/components/profile/ProfileHero";
 
 import { useEffect, useState } from "react";
 import ProfileUser from "../src/components/profile/ProfileUser";
+import ProfileCollectionFilters from "../src/components/profile/ProfileCollectionFilters";
 
 export default function Index() {
   // const [featureCards, setFeatureCards] = useState([]);
   // const [trendingCards, setTrendingCards] = useState([]);
   // const [dataCollectors, setDataCollectors] = useState([]);
   // const [nfts, setNfts] = useState([]);
-
-  const [productData, setProductData] = useState([]);
+  // const [productData, setProductData] = useState([]);
+  const [filtersProfile, setFiltersProfile] = useState([]);
 
   useEffect(() => {
     //   setFeatureCards(dataFeatured);
     //   setTrendingCards(dataTrending);
     //   setDataCollectors(dataUsers);
     //   setNfts(dataNfts);
-    setProductData(dataProduct);
+    // setProductData(dataProduct);
+      setFiltersProfile(dataProfileFilters);
   }, []);
 
   // let date;
@@ -48,8 +51,10 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProfileUser name="emo" info="lorem ipsum dolor sit ament few efwmf weok[pll/'c vewfew niuniunoin jnionoinoinl nuinoin unyfcrxtrc tcc5tvytf"
-      avatar="./images/avatar.png" verified={true}></ProfileUser>
+      {/* {console.log(filtersProfile)} */}
+      <ProfileCollectionFilters filters={filtersProfile}></ProfileCollectionFilters>
+      {/* <ProfileUser name="emo" info="lorem ipsum dolor sit ament few efwmf weok[pll/'c vewfew niuniunoin jnionoinoinl nuinoin unyfcrxtrc tcc5tvytf"
+      avatar="./images/avatar.png" verified={true}></ProfileUser> */}
       {/* <ProfileHero image="https://source.unsplash.com/random"></ProfileHero> */}
      
            {/* <ProductActions
