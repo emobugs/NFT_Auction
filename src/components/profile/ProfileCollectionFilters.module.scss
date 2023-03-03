@@ -1,0 +1,23 @@
+@use "../../styles/colors";
+
+.flex{
+    justify-content: space-between;
+}
+
+.inputs-cnt{
+    align-items: center;
+}
+
+.heading{
+    justify-self: flex-start;
+}
+
+.search-input{
+    background-color: colors.$background_paper;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.icon{
+    color: colors.$text_primary;
+}

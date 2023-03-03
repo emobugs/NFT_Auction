@@ -1,46 +1,98 @@
-import styles from "./ProfileCollectionFilters.module.scss"
-import classNames from 'classnames'
+import styles from "./ProfileCollectionFilters.module.scss";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
-import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment, Typography } from "@mui/material"
-import { Search } from "@mui/icons-material"
+import { useState, useEffect } from "react";
+import { InputAdornment, TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
-export default function ProfileCollectionFilters({filters}) {
+const names = [
+  "Oliver Hansen",
+  "Van Henry",
+  "April Tucker",
+  "Ralph Hubbard",
+  "Omar Alexander",
+  "Carlos Abbott",
+  "Miriam Wagner",
+  "Bradley Wilkerson",
+  "Virginia Andrews",
+  "Kelly Snyder",
+];
+export default function ProfileCollectionFilters({ filters = [] }) {
+  const [personName, setPersonName] = useState([]);
+  const [filterSort, setFilterSort] = useState([]);
+
+  const handleChange = (event) => {
+    setPersonName(event.target.value);
+  };
+
+  useEffect(() => {
+    const fetchFilters = async () => {
+      const filtersC = await filters;
+      console.log(filtersC);
+      setFilterSort(await filtersC);
+    };
+
+    fetchFilters();
+  }, [filters]);
+
   return (
-    <div className={classNames(styles['profile-collection-filters'])}>
-        {/* {
-sort: [
-  { label: "Name (Ascending)", value: 1 },
-  { label: "Name (Descending)", value: 2 },
-],
-price: [
-  { label: "0.3 - 0.5 ETH", value: 3 },
-  {
-    label: "0.5 - 2 ETH",
-    value: 4,
-  },
-  {
-    label: "2- 3 ETH",
-    value: 5,
-  },
-],
-} */}
-        <Stack>
-            <Typography variant="h1">Collection</Typography>
-        <FormControl>
-            <InputLabel id="select-sort-label">Sort By</InputLabel>
+    <div>
+      <Stack className={styles["flex"]} direction="row">
+        <Typography className={styles["heading"]} variant="h1">
+          Collection
+        </Typography>
+
+        <Stack className={styles['inputs-cnt']} direction="row">
+          <FormControl sx={{ m: 1, width: 300 }}>
+            <InputLabel id="demo-multiple-name-label">Sort by</InputLabel>
             <Select
-            labelId="select-sort-label"
-            id="select-sort"
-            value=""
-            ></Select>
-        </FormControl>
-        <FormControl>
-            <Select></Select>
-        </FormControl>
-        <FormControl>
-            <TextField/>
-        </FormControl>
+              className={styles["select-sort"]}
+              labelId="demo-multiple-name-label"
+              id="demo-multiple-name"
+              value={personName}
+              onChange={handleChange}
+              input={<OutlinedInput label="Name" />}
+            >
+              {/* {filterSort && generateSortItems} */}
+            </Select>
+          </FormControl>
+          <FormControl sx={{ m: 1, width: 300 }}>
+            <InputLabel id="demo-multiple-name-label">Price range</InputLabel>
+            <Select
+              className={styles["price-sort"]}
+              labelId="demo-multiple-name-label"
+              id="demo-multiple-name"
+              value={personName}
+              onChange={handleChange}
+              input={<OutlinedInput label="Name" />}
+            >
+              {/* {filterSort && generateSortItems} */}
+            </Select>
+          </FormControl>
+          <FormControl>
+            <TextField
+              id="search-collections"
+              className={styles["search-input"]}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon
+                      className={styles.icon}
+                      sx={{ color: "#fff" }}
+                    />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </FormControl>
         </Stack>
+      </Stack>
     </div>
-  )
+  );
 }
