@@ -42,7 +42,7 @@ export default function ProfileCollectionFilters({ filters = [] }) {
   }, [filters]);
 
   return (
-    <div>
+    <div className={styles['profile-collection-filters']}>
       <Stack className={styles["flex"]} direction="row">
         <Typography className={styles["heading"]} variant="h1">
           Collection
@@ -79,6 +79,7 @@ export default function ProfileCollectionFilters({ filters = [] }) {
             <TextField
               id="search-collections"
               className={styles["search-input"]}
+              variant="standard"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
