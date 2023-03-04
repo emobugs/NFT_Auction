@@ -20,7 +20,7 @@ export default function ProfileCollection({ user, filters, items }) {
               <ProfileCollectionFilters filters={filters} />
             </Grid>
           </Grid>
-          <Grid container item spacing={1}>
+          <Grid container spacing={1}>
             {items.map((item, i) => {
               return (
                 <Grid item xs={3} key={i}>

@@ -52,7 +52,7 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProfileCollection
+      {/* <ProfileCollection
         user={{
           name: "emo",
           avatar: "./imagaes/avatar.png",
@@ -99,7 +99,7 @@ export default function Index() {
             timeLeft: 0,
           },
         ]}
-      />
+      /> */}
       {/* {console.log(filtersProfile)} */}
       {/* <ProfileCollectionFilters filters={filtersProfile}></ProfileCollectionFilters> */}
       {/* <ProfileUser name="emo" info="lorem ipsum dolor sit ament few efwmf weok[pll/'c vewfew niuniunoin jnionoinoinl nuinoin unyfcrxtrc tcc5tvytf"
