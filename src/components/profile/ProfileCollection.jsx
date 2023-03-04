@@ -20,11 +20,11 @@ export default function ProfileCollection({ user, filters, items }) {
               <ProfileCollectionFilters filters={filters} />
             </Grid>
           </Grid>
-          <Grid container spacing={1}>
+          <Grid container  spacing={1}>
             {items.map((item, i) => {
               return (
                 <Grid item xs={3} key={i}>
-                  <Card user={user} title={item.title} currency={item.currency} likes={item.likes} mediaUrl={item.mediaUrl} timeLeft={item.timeLeft}/>
+                  <Card user={item.user} name={item.name} title={item.title} currency={item.currency} likes={item.likes} mediaUrl={item.mediaUrl} timeLeft={item.timeLeft}/>
                 </Grid>
               );
             })}
