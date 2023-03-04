@@ -34,7 +34,7 @@ export default function ProfileCollectionFilters({ filters = [] }) {
   useEffect(() => {
     const fetchFilters = async () => {
       const filtersC = await filters;
-      console.log(filtersC);
+      // console.log(filtersC);
       setFilterSort(await filtersC);
     };
 
@@ -42,57 +42,48 @@ export default function ProfileCollectionFilters({ filters = [] }) {
   }, [filters]);
 
   return (
-    <div className={styles['profile-collection-filters']}>
+    <div className={styles["profile-collection-filters"]}>
       <Stack className={styles["flex"]} direction="row">
-        <Typography className={styles["heading"]} variant="h1">
-          Collection
-        </Typography>
-
-        <Stack className={styles['inputs-cnt']} direction="row">
-          <FormControl sx={{ m: 1, width: 300 }}>
-            <InputLabel id="demo-multiple-name-label">Sort by</InputLabel>
-            <Select
-              className={styles["select-sort"]}
-              labelId="demo-multiple-name-label"
-              id="demo-multiple-name"
-              value={personName}
-              onChange={handleChange}
-              input={<OutlinedInput label="Name" />}
-            >
-              {/* {filterSort && generateSortItems} */}
-            </Select>
-          </FormControl>
-          <FormControl sx={{ m: 1, width: 300 }}>
-            <InputLabel id="demo-multiple-name-label">Price range</InputLabel>
-            <Select
-              className={styles["price-sort"]}
-              labelId="demo-multiple-name-label"
-              id="demo-multiple-name"
-              value={personName}
-              onChange={handleChange}
-              input={<OutlinedInput label="Name" />}
-            >
-              {/* {filterSort && generateSortItems} */}
-            </Select>
-          </FormControl>
-          <FormControl>
-            <TextField
-              id="search-collections"
-              className={styles["search-input"]}
-              variant="standard"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon
-                      className={styles.icon}
-                      sx={{ color: "#fff" }}
-                    />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </FormControl>
-        </Stack>
+        <FormControl sx={{ m: 1, width: 300 }}>
+          <InputLabel id="demo-multiple-name-label">Sort by</InputLabel>
+          <Select
+            className={styles["select-sort"]}
+            labelId="demo-multiple-name-label"
+            id="demo-multiple-name"
+            value={personName}
+            onChange={handleChange}
+            input={<OutlinedInput label="Name" />}
+          >
+            {/* {filterSort && generateSortItems} */}
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, width: 300 }}>
+          <InputLabel id="demo-multiple-name-label">Price range</InputLabel>
+          <Select
+            className={styles["price-sort"]}
+            labelId="demo-multiple-name-label"
+            id="demo-multiple-name"
+            value={personName}
+            onChange={handleChange}
+            input={<OutlinedInput label="Name" />}
+          >
+            {/* {filterSort && generateSortItems} */}
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, width: 300}}>
+          <TextField
+            id="search-collections"
+            className={styles["search-input"]}
+            variant="standard"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon className={styles.icon} sx={{ color: "#fff" }} />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </FormControl>
       </Stack>
     </div>
   );
