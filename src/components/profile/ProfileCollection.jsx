@@ -17,16 +17,16 @@ export default function ProfileCollection({ user, filter: filters, items }) {
               <Typography variant="h3">Collection</Typography>
             </Grid>
             <Grid item xs={9} md={9}>
-              <ProfileCollectionFilters filters={filters}/>
+              <ProfileCollectionFilters filters={filters} />
             </Grid>
           </Grid>
           <Grid container item>
-            {items.map(item => {
-                return(
-                    <Grid item >
-                        <Card user={user}/>
-                    </Grid>
-                )
+            {items.map((item) => {
+              return (
+                <Grid item>
+                  <Card user={user} />
+                </Grid>
+              );
             })}
           </Grid>
         </Grid>
