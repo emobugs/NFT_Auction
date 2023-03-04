@@ -44,7 +44,7 @@ export default function Index() {
     //   setDataCollectors(dataUsers);
     //   setNfts(dataNfts);
     // setProductData(dataProduct);
-      setFiltersProfile(dataProfileFilters);
+    setFiltersProfile(dataProfileFilters);
   }, []);
 
   // let date;
@@ -52,14 +52,61 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ProfileCollection/>
+      <ProfileCollection
+        user={{
+          name: "emo",
+          avatar: "./imagaes/avatar.png",
+          info: "someingo",
+          size: 100,
+          verified: false,
+        }}
+        filters={dataProfileFilters}
+        items={[
+          {
+            title: "fewfew",
+            name: "fewfew",
+            likes: 121243,
+            mediaUrl: "fewfewfew",
+            price: 432432423,
+            currency: "ETH",
+            timeLeft: 0,
+          },
+          {
+            title: "fewfew",
+            name: "fewfew",
+            likes: 121243,
+            mediaUrl: "fewfewfew",
+            price: 432432423,
+            currency: "ETH",
+            timeLeft: 421421,
+          },
+          {
+            title: "fewfew",
+            name: "fewfew",
+            likes: 121243,
+            mediaUrl: "fewfewfew",
+            price: 432432423,
+            currency: "ETH",
+            timeLeft: 0,
+          },
+          {
+            title: "fewfew",
+            name: "fewfew",
+            likes: 121243,
+            mediaUrl: "fewfewfew",
+            price: 432432423,
+            currency: "ETH",
+            timeLeft: 0,
+          },
+        ]}
+      />
       {/* {console.log(filtersProfile)} */}
       {/* <ProfileCollectionFilters filters={filtersProfile}></ProfileCollectionFilters> */}
       {/* <ProfileUser name="emo" info="lorem ipsum dolor sit ament few efwmf weok[pll/'c vewfew niuniunoin jnionoinoinl nuinoin unyfcrxtrc tcc5tvytf"
       avatar="./images/avatar.png" verified={true}></ProfileUser> */}
       {/* <ProfileHero image="https://source.unsplash.com/random"></ProfileHero> */}
-     
-           {/* <ProductActions
+
+      {/* <ProductActions
       isLive={true}
       currency="ETH"
       buyAmount={100}

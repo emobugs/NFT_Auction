@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import ProfileCollectionFilters from "./ProfileCollectionFilters";
 import Card from "../card/Card";
 
-export default function ProfileCollection({ user, filter: filters, items }) {
+export default function ProfileCollection({ user, filters, items }) {
   return (
     <div className={styles["profile-collection"]}>
       <Container maxWidth={false}>
@@ -20,11 +20,11 @@ export default function ProfileCollection({ user, filter: filters, items }) {
               <ProfileCollectionFilters filters={filters} />
             </Grid>
           </Grid>
-          <Grid container item>
-            {items.map((item) => {
+          <Grid container item spacing={1}>
+            {items.map((item, i) => {
               return (
-                <Grid item>
-                  <Card user={user} />
+                <Grid item xs={3} key={i}>
+                  <Card user={user} title={item.title} currency={item.currency} likes={item.likes} mediaUrl={item.mediaUrl} timeLeft={item.timeLeft}/>
                 </Grid>
               );
             })}
