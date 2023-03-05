@@ -55,7 +55,7 @@ export default function Index() {
   return (
     <div>
 
-      <ActivityListItem 
+      {/* <ActivityListItem 
  created_at= "2023-03-05T03:30:30"
  user= {{
     avatar: {
@@ -74,7 +74,7 @@ export default function Index() {
        verified: false
     }}
  }
- type= "buy"/>
+ type= "buy"/> */}
       {/* <ProfileCollection
         user={{
           name: "emo",

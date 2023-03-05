@@ -1,6 +1,6 @@
 import styles from "ActivityList.module.scss";
 
-import Stack from "@mui/material/Stack";
+import { Stack } from "@mui/material";
 import ActivityListItem from "./ActivityListItem";
 
 export default function ActivityList({ items }) {
