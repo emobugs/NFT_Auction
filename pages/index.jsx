@@ -54,19 +54,11 @@ export default function Index() {
  }, []);
   
   async function getData(){
-   await fetch(`${process.env.apiUrl}/featured`)
-   .then(response => {
-      console.log(response)
-     if(response.ok){
-       return response.json();
-     }
-     throw response;
-   }).then(data => {
-      console.log('data', data)
-     setFeaturedCards(data.nfts);
-   }).catch(error => {
-     console.error('error' + error);
-   })
+   const result = await fetch(`${process.env.apiUrl}/featured`)
+   const  response = await result.json();
+   response.nfts[0].rows = 2;
+   response.nfts[0].cols = 3;
+     setFeaturedCards(response.nfts);
  }
 
   

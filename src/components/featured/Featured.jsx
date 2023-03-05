@@ -16,15 +16,13 @@ export default function Featured({ items = [] }) {
         rows={2}
       >
         {items.map((item, i) => {
-          let cols = i === 0 ? 3 : 1;
-          let rows = i === 0 ? 2 : 1;
           return (
             // {console.log(item)}
             <ImageListItem
               className={styles.imageItem}
               key={i + 1}
-              cols={item.cols || cols}
-              rows={item.rows || rows}
+              cols={item.cols}
+              rows={item.rows}
             >
               <img
                 className={styles.image}
