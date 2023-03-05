@@ -11,18 +11,6 @@ import { useState, useEffect } from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
-];
 export default function ActivityFilters({ filters = [] }) {
   const [filter, setFilter] = useState([]);
   const [filterSort, setFilterSort] = useState([]);
