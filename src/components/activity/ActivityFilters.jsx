@@ -23,7 +23,7 @@ const names = [
   "Virginia Andrews",
   "Kelly Snyder",
 ];
-export default function ProfileCollectionFilters({ filters = [] }) {
+export default function ActivityFilters({ filters = [] }) {
   const [filter, setFilter] = useState([]);
   const [filterSort, setFilterSort] = useState([]);
 
