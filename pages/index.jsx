@@ -30,6 +30,8 @@ import ProfileUser from "../src/components/profile/ProfileUser";
 import ProfileCollectionFilters from "../src/components/profile/ProfileCollectionFilters";
 import ProfileCollection from "../src/components/profile/ProfileCollection";
 
+import ActivityListItem from "../src/components/activity/ActivityListItem";
+
 export default function Index() {
   // const [featureCards, setFeatureCards] = useState([]);
   // const [trendingCards, setTrendingCards] = useState([]);
@@ -52,6 +54,27 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
+
+      <ActivityListItem 
+ created_at= "2023-03-05T03:30:30"
+ user= {{
+    avatar: {
+       url: './images/avatar.png'
+    },
+    verified: true,
+    name: "emobugs"
+ }}
+ nft={{
+    name: 'imalo edno nft',
+    owner: {
+       username: 'ivankoliov',
+        avatar: {
+           url: './images/avatar.png'
+        },
+       verified: false
+    }}
+ }
+ type= "buy"/>
       {/* <ProfileCollection
         user={{
           name: "emo",
