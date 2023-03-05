@@ -2,6 +2,7 @@ import styles from "./Featured.module.scss";
 
 import { Container, ImageList, ImageListItem } from "@mui/material";
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
 export default function Featured({ items = [] }) {
   const router = useRouter();
@@ -31,7 +32,9 @@ export default function Featured({ items = [] }) {
                 src={item.image}
                 alt={item.title}
                 loading="lazy"
-                onClick={() => router.push('https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=500&h=500')}
+                onClick={() =>
+                  router.push(`product/${item.id}`)
+                }
               />
             </ImageListItem>
           );
