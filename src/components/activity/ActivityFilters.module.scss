@@ -1,20 +1,22 @@
 @use "../../styles/colors";
 
-.activity-filters{
-    display: block;
-    align-items: center;
+.activity-filters {
+  display: block;
+  align-items: center;
 }
 
-.flex{
-    justify-content: space-between;
+.flex {
+  justify-content: space-between;
 }
 
-.search-input{
-    background-color: colors.$background_paper;
-    overflow: hidden;
-    border-radius: 30px;
+.search-input {
+  background-color: colors.$background_paper;
+  overflow: hidden;
+  border-radius: 30px;
+  height: 100%;
+  padding-left: 1rem !important;
 }
 
-.icon{
-    color: colors.$text_primary;
+.icon {
+  color: colors.$text_primary;
 }

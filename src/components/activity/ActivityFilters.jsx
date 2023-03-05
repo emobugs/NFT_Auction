@@ -69,6 +69,9 @@ export default function ActivityFilters({ filters = [] }) {
             id="search-collections"
             className={styles["search-input"]}
             variant="standard"
+            sx={{ "& .MuiInputBase-root": {
+              height: '100%'
+          }}}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
