@@ -1,0 +1,20 @@
+@use "../../styles/colors";
+
+.activity-filters{
+    display: block;
+    align-items: center;
+}
+
+.flex{
+    justify-content: space-between;
+}
+
+.search-input{
+    background-color: colors.$background_paper;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.icon{
+    color: colors.$text_primary;
+}
