@@ -31,6 +31,7 @@ import ProfileCollectionFilters from "../src/components/profile/ProfileCollectio
 import ProfileCollection from "../src/components/profile/ProfileCollection";
 
 import ActivityListItem from "../src/components/activity/ActivityListItem";
+import ActivityList from "../src/components/activity/ActivityList";
 
 export default function Index() {
   // const [featureCards, setFeatureCards] = useState([]);
@@ -38,7 +39,7 @@ export default function Index() {
   // const [dataCollectors, setDataCollectors] = useState([]);
   // const [nfts, setNfts] = useState([]);
   // const [productData, setProductData] = useState([]);
-  const [filtersProfile, setFiltersProfile] = useState([]);
+  // const [filtersProfile, setFiltersProfile] = useState([]);
 
   useEffect(() => {
     //   setFeatureCards(dataFeatured);
@@ -46,7 +47,7 @@ export default function Index() {
     //   setDataCollectors(dataUsers);
     //   setNfts(dataNfts);
     // setProductData(dataProduct);
-    setFiltersProfile(dataProfileFilters);
+    // setFiltersProfile(dataProfileFilters);
   }, []);
 
   // let date;
@@ -54,6 +55,68 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
+      <ActivityList items={[
+{
+    created_at: "2023-03-05T03:30:30",
+ user: {
+    avatar: {
+       url: './images/avatar.png',
+    },
+    verified: true,
+    name: "emobugs",
+ },
+ nft:{
+    name: 'imalo edno nft',
+    owner: {
+       username: 'ivankoliov',
+        avatar: {
+           url: './images/avatar.png',
+        },
+       verified: false,
+    },
+ },
+ type: "buy"},
+
+ {
+    created_at: "2023-03-05T03:30:30",
+ user: {
+    avatar: {
+       url: './images/avatar.png',
+    },
+    verified: true,
+    name: "emobugs",
+ },
+ nft:{
+    name: 'imalo edno nft',
+    owner: {
+       username: 'ivankoliov',
+        avatar: {
+           url: './images/avatar.png',
+        },
+       verified: false,
+    },
+ },
+ type: "buy"},
+ {
+  created_at: "2023-03-05T03:30:30",
+user: {
+  avatar: {
+     url: './images/avatar.png',
+  },
+  verified: true,
+  name: "emobugs",
+},
+nft:{
+  name: 'imalo edno nft',
+  owner: {
+     username: 'ivankoliov',
+      avatar: {
+         url: './images/avatar.png',
+      },
+     verified: false,
+  },
+},
+type: "buy"}]}/>
 
       {/* <ActivityListItem 
  created_at= "2023-03-05T03:30:30"
