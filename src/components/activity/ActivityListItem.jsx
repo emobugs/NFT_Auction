@@ -25,8 +25,8 @@ export default function ActivityListItem({
         <Avatar url={user.avatar.url} verified={user.verified} />
         <Stack className={styles["info-stack"]} direction="column">
           <p className={styles["info-par"]}>
-            {`${user.name} ${action()}`}
-            <Link href={nft.owner.avatar.url}>"{nft.name}"</Link> by 
+            {`${user.name} ${action()}`}{" "}
+            <Link href={nft.owner.avatar.url}>"{nft.name}"</Link> by{" "}
             <Link href={user.avatar.url}>{nft.owner.username}</Link>
           </p>
           <p className={styles["info-par"]}>

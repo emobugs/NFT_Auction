@@ -1,7 +1,10 @@
+@use "../../styles/colors";
+
 .list-item-stack{
     justify-content: flex-start;
     align-items: center;
     padding: 1rem;
+    background-color: colors.$background_paper;
 }
 
 .info-par{
