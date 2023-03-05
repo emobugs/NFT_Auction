@@ -2,7 +2,6 @@ import styles from "./Featured.module.scss";
 
 import { Container, ImageList, ImageListItem } from "@mui/material";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
 
 export default function Featured({ items = [] }) {
   const router = useRouter();

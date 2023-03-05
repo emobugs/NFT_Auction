@@ -10,13 +10,8 @@ $grid-gap: 1rem;
 .imageList {
   position: relative;
   gap: $grid-gap !important;
-  // width: 100% !important;
-  max-height: 700px;
-  // grid-template-columns: repeat(3,1fr);
-}
-
-.imageItem {
-}
+  // max-height: 700px;
+ }
 
 .image {
   max-height: 100%;
