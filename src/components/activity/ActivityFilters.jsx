@@ -1,4 +1,4 @@
-import styles from "./ProfileCollectionFilters.module.scss";
+import styles from "./ActivityFilters.module.scss";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
@@ -42,6 +42,8 @@ export default function ActivityFilters({ filters = [] }) {
             id="select-sort"
             value={filter}
             onChange={handleChange}
+            variant='outlined'
+            color='primary'
             input={<OutlinedInput label="Sort by" />}
           >
             {/* {filterSort && generateSortItems} */}
@@ -55,6 +57,8 @@ export default function ActivityFilters({ filters = [] }) {
             id="select-type"
             value={filter}
             onChange={handleChange}
+            variant='outlined'
+            color='primary'
             input={<OutlinedInput label="Type" />}
           >
             {/* {filterSort && generateSortItems} */}
