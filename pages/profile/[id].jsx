@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 export default function profile() {
-  const [profile, setProfile] = useState({});
 
   const router = useRouter();
   const id = router.query.id;
