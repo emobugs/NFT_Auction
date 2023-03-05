@@ -34,6 +34,11 @@ export default function ExploreFilters({ filters = [] }) {
             color="primary"
             input={<OutlinedInput label="Sort by" />}
           >
+            
+            <MenuItem value="Day">Day</MenuItem>
+            <MenuItem value="Week">Week</MenuItem>
+            <MenuItem value="Month">Month</MenuItem>
+           
             {/* {filterSort && generateSortItems} */}
           </Select>
         </FormControl>
@@ -50,6 +55,9 @@ export default function ExploreFilters({ filters = [] }) {
             input={<OutlinedInput label="Price" />}
           >
             {/* {filterSort && generateSortItems} */}
+            <MenuItem value="100-200">100-200</MenuItem>
+            <MenuItem value="200-500">200-500</MenuItem>
+            <MenuItem value="500-1000">500-1000</MenuItem>
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, width: 300 }}>

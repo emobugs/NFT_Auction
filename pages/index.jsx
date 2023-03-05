@@ -33,6 +33,8 @@ import ProfileCollection from "../src/components/profile/ProfileCollection";
 import ActivityListItem from "../src/components/activity/ActivityListItem";
 import ActivityList from "../src/components/activity/ActivityList";
 
+import ExploreFilters from "../src/components/explore/ExploreFilters";
+
 export default function Index() {
   // const [featureCards, setFeatureCards] = useState([]);
   // const [trendingCards, setTrendingCards] = useState([]);
@@ -55,7 +57,8 @@ export default function Index() {
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ActivityList items={[
+      <ExploreFilters/>
+      {/* <ActivityList items={[
 {
     created_at: "2023-03-05T03:30:30",
  user: {
@@ -116,7 +119,7 @@ nft:{
      verified: false,
   },
 },
-type: "buy"}]}/>
+type: "buy"}]}/> */}
 
       {/* <ActivityListItem 
  created_at= "2023-03-05T03:30:30"
