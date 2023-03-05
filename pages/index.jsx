@@ -54,7 +54,7 @@ export default function Index() {
  }, []);
   
   async function getData(){
-   await fetch("https://project-4-api.boom.dev/featured")
+   await fetch(`${process.env.apiUrl}/featured`)
    .then(response => {
       console.log(response)
      if(response.ok){
