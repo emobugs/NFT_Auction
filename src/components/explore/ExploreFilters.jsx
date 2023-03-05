@@ -3,9 +3,8 @@ import styles from "./ExploreFilters.module.scss";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
+import { InputLabel, MenuItem } from "@mui/material";
 import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import OutlinedInput from "@mui/material/OutlinedInput";
 
 import { useState, useEffect } from "react";
