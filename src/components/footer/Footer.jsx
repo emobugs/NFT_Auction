@@ -20,7 +20,7 @@ export default function Footer() {
           </Grid>
           <Grid className={styles.inputGrid} item xs={4}>
             <p className={styles.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+              EMO All rights reserved{" "}
             </p>
           </Grid>
           <Grid className={styles.buttonGrid} item xs={4}>
