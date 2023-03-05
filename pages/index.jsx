@@ -36,7 +36,7 @@ import ActivityList from "../src/components/activity/ActivityList";
 import ExploreFilters from "../src/components/explore/ExploreFilters";
 
 export default function Index() {
-  // const [featureCards, setFeatureCards] = useState([]);
+  const [featuredCards, setFeaturedCards] = useState([]);
   // const [trendingCards, setTrendingCards] = useState([]);
   // const [dataCollectors, setDataCollectors] = useState([]);
   // const [nfts, setNfts] = useState([]);
@@ -44,20 +44,40 @@ export default function Index() {
   // const [filtersProfile, setFiltersProfile] = useState([]);
 
   useEffect(() => {
-    //   setFeatureCards(dataFeatured);
-    //   setTrendingCards(dataTrending);
-    //   setDataCollectors(dataUsers);
-    //   setNfts(dataNfts);
-    // setProductData(dataProduct);
-    // setFiltersProfile(dataProfileFilters);
-  }, []);
+   //   setFeatureCards(dataFeatured);
+   //   setTrendingCards(dataTrending);
+   //   setDataCollectors(dataUsers);
+   //   setNfts(dataNfts);
+   // setProductData(dataProduct);
+   // setFiltersProfile(dataProfileFilters);
+   getData();
+ }, []);
+  
+  async function getData(){
+   await fetch("https://project-4-api.boom.dev/featured")
+   .then(response => {
+      console.log(response)
+     if(response.ok){
+       return response.json();
+     }
+     throw response;
+   }).then(data => {
+      console.log('data', data)
+     setFeaturedCards(data.nfts);
+   }).catch(error => {
+     console.error('error' + error);
+   })
+ }
+
+  
 
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <ExploreFilters/>
+      <Featured items={featuredCards}/>
+      {/* <ExploreFilters/> */}
       {/* <ActivityList items={[
 {
     created_at: "2023-03-05T03:30:30",
