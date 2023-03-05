@@ -31,15 +31,7 @@ export default function ProfileCollectionFilters({ filters = [] }) {
     setPersonName(event.target.value);
   };
 
-  // useEffect(() => {
-  //   const fetchFilters = async () => {
-  //     const filtersC = await filters;
-  //     // console.log(filtersC);
-  //     setFilterSort(await filtersC);
-  //   };
 
-  //   fetchFilters();
-  // }, [filters]);
 
   return (
     <div className={styles["profile-collection-filters"]}>
