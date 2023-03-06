@@ -14,7 +14,6 @@ import { Favorite } from "@mui/icons-material";
 
 export default function Card({
   title = "",
-  name = "String",
   likes = 0,
   mediaUrl = "String",
   user = {
@@ -54,7 +53,7 @@ export default function Card({
 
   return (
     <CardMui className={liveClass}>
-      <Avatar url={user.avatar.url} className={styles.avatar} />
+      <Avatar url={user.avatar.url} className={styles.avatar} verified={user.verified}/>
       {/* Live or normal card */}
       {timeLeft ? (
         liveBadge
@@ -63,7 +62,7 @@ export default function Card({
       )}
       <div className={styles.info}>
         <div className={styles["basic-info"]}>
-          <h2 className={styles.title}>{title}</h2>
+          <h3 className={styles.title}>{title}</h3>
           <p className={styles.price}>
             ~{price.toFixed(1)} {currency}
           </p>
