@@ -6,7 +6,7 @@ export default function Avatar({ size = 50, url, verified = false }) {
       className={styles.avatar}
       style={{ width: size + "px", height: size + "px" }}
     >
-      <img src={url} alt="profile_avatar" className={styles.image} />
+      <img src={url} alt="profile_avatar" className={styles.image}/>
       {verified && (
         <img src="images/verified.svg" alt="badge" className={styles.badge} />
       )}
