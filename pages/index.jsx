@@ -37,39 +37,48 @@ import ExploreFilters from "../src/components/explore/ExploreFilters";
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
-  // const [trendingCards, setTrendingCards] = useState([]);
+  const[trendingItems, setTrendingItems] = useState([]);
+  const[trendingFilters, setTrendingFilters] = useState([]);
   // const [dataCollectors, setDataCollectors] = useState([]);
   // const [nfts, setNfts] = useState([]);
   // const [productData, setProductData] = useState([]);
   // const [filtersProfile, setFiltersProfile] = useState([]);
+  async function getData(component) {
+    const result = await fetch(`${process.env.apiUrl}/${component}`);
+    const response = await result.json();
+    return response;
+  }
 
-  useEffect(() => {
-   //   setFeatureCards(dataFeatured);
-   //   setTrendingCards(dataTrending);
-   //   setDataCollectors(dataUsers);
-   //   setNfts(dataNfts);
-   // setProductData(dataProduct);
-   // setFiltersProfile(dataProfileFilters);
-   getData();
- }, []);
-  
-  async function getData(){
-   const result = await fetch(`${process.env.apiUrl}/featured`)
-   const  response = await result.json();
-   response.nfts[0].rows = 2;
-   response.nfts[0].cols = 3;
-     setFeaturedCards(response.nfts);
- }
+  // featured data
+  useEffect(async () => {
+    //   setFeatureCards(dataFeatured);
+    //   setTrendingCards(dataTrending);
+    //   setDataCollectors(dataUsers);
+    //   setNfts(dataNfts);
+    // setProductData(dataProduct);
+    // setFiltersProfile(dataProfileFilters);
+    const data = await getData("featured");
+    data.nfts[0].rows = 2;
+    data.nfts[0].cols = 3;
+    setFeaturedCards(data.nfts);
+  }, []);
 
-  
+  // trending data
+  useEffect(async () => {
+   const data = await getData('trending');
+   const filters = data.filters;
+   const nfts = data.nfts;
+   setTrendingItems(nfts);
+   setTrendingFilters(filters.sort)
+  }, [])
 
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
-      <Featured items={featuredCards}/>
-     
+      <Featured items={featuredCards} />
+      <Trending cards={trendingItems} filters={trendingFilters}/>
     </div>
   );
 }
