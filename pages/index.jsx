@@ -37,8 +37,10 @@ import ExploreFilters from "../src/components/explore/ExploreFilters";
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
-  const[trendingItems, setTrendingItems] = useState([]);
-  const[trendingFilters, setTrendingFilters] = useState([]);
+  const [trendingItems, setTrendingItems] = useState([]);
+  const [trendingFilters, setTrendingFilters] = useState([]);
+  const [collectors, setCollectors] = useState([]);
+  const [collectorFilters, setCollectorFilters] = useState([]);
   // const [dataCollectors, setDataCollectors] = useState([]);
   // const [nfts, setNfts] = useState([]);
   // const [productData, setProductData] = useState([]);
@@ -51,12 +53,6 @@ export default function Index() {
 
   // featured data
   useEffect(async () => {
-    //   setFeatureCards(dataFeatured);
-    //   setTrendingCards(dataTrending);
-    //   setDataCollectors(dataUsers);
-    //   setNfts(dataNfts);
-    // setProductData(dataProduct);
-    // setFiltersProfile(dataProfileFilters);
     const data = await getData("featured");
     data.nfts[0].rows = 2;
     data.nfts[0].cols = 3;
@@ -65,12 +61,19 @@ export default function Index() {
 
   // trending data
   useEffect(async () => {
-   const data = await getData('trending');
-   const filters = data.filters;
-   const nfts = data.nfts;
-   setTrendingItems(nfts);
-   setTrendingFilters(filters.sort)
-  }, [])
+    const data = await getData("trending");
+    const filters = data.filters;
+    const nfts = data.nfts;
+    setTrendingItems(nfts);
+    setTrendingFilters(filters.sort);
+  }, []);
+
+  useEffect(async () => {
+    const data = await getData("top-collectors");
+    setCollectors(data.users);
+    setCollectorFilters(data.filters.sort);
+    console.log(data);
+  });
 
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
@@ -78,7 +81,8 @@ export default function Index() {
   return (
     <div>
       <Featured items={featuredCards} />
-      <Trending cards={trendingItems} filters={trendingFilters}/>
+      <Trending cards={trendingItems} filters={trendingFilters} />
+      <TopCollectors collectors={collectors} filters={collectorFilters}/>
     </div>
   );
 }
