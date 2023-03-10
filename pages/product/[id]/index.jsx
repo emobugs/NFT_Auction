@@ -9,21 +9,17 @@ import Footer from "../../../src/components/footer/Footer";
 import ProductContainer from "../../../src/components/product/ProductContainer";
 
 export default function Product() {
-  const [productId, setProductId] = useState("");
   const [product, setProduct] = useState({});
   const router = useRouter();
   const id = router.query.id;
 
-  const chooseProduct = (id) => {
-    // try catch
-    const parsedId = Number.parseInt(id);
-    return dataNfts.find((p) => p.id === parsedId);
-  };
+  useEffect(async () => {
+    const result = await fetch(`${process.env.apiUrl}/nfts/${id}`);
+    if(result.ok){
+      const data = await result.json();
+      setProduct(data);
+    }
 
-  useEffect(() => {
-    setProductId(id);
-
-    setProduct(chooseProduct(id));
   }, [id]);
 
   return (
