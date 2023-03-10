@@ -11,7 +11,7 @@ export default function User({
 }) {
   return (
     <div className={styles.user}>
-      <Avatar size={size} url={avatar} verified={verified}/>
+      <Avatar size={size} url={avatar.url} verified={verified}/>
       <div className={styles["user-data"]}>
         <h2 className={styles.name}>{name}</h2>
         {info ? (<p className={styles.info}>{`${info} items`}</p>) : ""}
