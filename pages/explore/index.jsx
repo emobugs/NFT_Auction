@@ -15,11 +15,9 @@ export default function index() {
 
   useEffect(async() =>{
     const response = await fetch(`${process.env.apiUrl}/explore`);
-    const result = await response.json();
-    const nfts = await result.nfts;
-    const filters = await result.filters;
-    setNfts(nfts);
-    setNftFilters(filters);
+    const data = await response.json();
+    setNfts(data.nfts);
+    setNftFilters(data.filters);
   }, [])
 
   return (
