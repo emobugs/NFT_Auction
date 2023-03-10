@@ -1,4 +1,8 @@
+@use "../../styles/mixins";
+
 .product-container{
+    @include mixins.wrapper;
     background-color: red;
     gap: 3rem;
+    justify-content: center;
 }
