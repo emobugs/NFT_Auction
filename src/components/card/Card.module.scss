@@ -17,6 +17,7 @@
 .info {
   display: flex;
   flex-direction: row;
+  gap: 0.5rem;
 }
 
 .basic-info {
@@ -26,8 +27,12 @@
 }
 
 .title {
+  width: 90%;
   margin: 0;
   color: colors.$text_primary;
+  overflow-x: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
 }
 
 .price {
@@ -36,6 +41,7 @@
 }
 
 .likes {
+  flex: 1 1 auto;
   justify-content: center;
   align-items: center;
   width: fit-content;
