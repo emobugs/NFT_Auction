@@ -23,7 +23,7 @@ export default function Trending({ filters = {}, cards = [] }) {
           className={styles.select}
           onChange={handleChange}
         >
-          {filters.map((f, i) => {
+          {Array.isArray(filters.sort) && filters.sort.map((f, i) => {
             return (
               <MenuItem label={f.label} value={f.value} key={i}>
                 {f.label}

@@ -41,7 +41,7 @@ export default function Index() {
   const [trendingFilters, setTrendingFilters] = useState([]);
   const [collectors, setCollectors] = useState([]);
   const [collectorFilters, setCollectorFilters] = useState([]);
-  const[auctions, setAuctions] = useState([]);
+  const [auctions, setAuctions] = useState([]);
   const [auctionFilters, setAuctionFilters] = useState([]);
 
   async function getData(component) {
@@ -61,27 +61,23 @@ export default function Index() {
   // trending data
   useEffect(async () => {
     const data = await getData("trending");
-    const filters = data.filters;
-    const nfts = data.nfts;
-    setTrendingItems(nfts);
-    setTrendingFilters(filters.sort);
+    setTrendingItems(data.nfts);
+    setTrendingFilters(data.filters);
   }, []);
 
   // top collectors
   useEffect(async () => {
     const data = await getData("top-collectors");
     setCollectors(data.users);
-    setCollectorFilters(data.filters.sort);
+    setCollectorFilters(data.filters);
   }, []);
 
   // auctions
   useEffect(async () => {
-    const data= await getData("live-auctions");
+    const data = await getData("live-auctions");
     setAuctions(data.nfts);
-    setAuctionFilters(data.filters.price);
-    
-  }, [])
-
+    setAuctionFilters(data.filters);
+  }, []);
 
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
@@ -90,9 +86,8 @@ export default function Index() {
     <div>
       <Featured items={featuredCards} />
       <Trending cards={trendingItems} filters={trendingFilters} />
-      <TopCollectors collectors={collectors} filters={collectorFilters}/>
-      <Auctions cards={auctions} filters={auctionFilters}/>
-
+      <TopCollectors collectors={collectors} filters={collectorFilters} />
+      <Auctions cards={auctions} filters={auctionFilters} />
     </div>
   );
 }

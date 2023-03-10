@@ -18,7 +18,7 @@ export default function Auctions({ cards = [], filters = [] }) {
         <h2 className={styles.heading}>Live Auctions</h2>
         <FormControl sx={{ width: "300px", marginLeft: "auto" }}>
           <Select defaultValue="" value={priceFilter} onChange={handleChange}>
-            {filters.map((p, i) => {
+            {Array.isArray(filters.price) && filters.price.map((p, i) => {
               return (
                 <MenuItem label={p.label} value={p.value} key={i}>
                   {p.label}
