@@ -41,6 +41,8 @@ export default function Index() {
   const [trendingFilters, setTrendingFilters] = useState([]);
   const [collectors, setCollectors] = useState([]);
   const [collectorFilters, setCollectorFilters] = useState([]);
+  const[auctions, setAuctions] = useState([]);
+  const [auctionFilters, setAuctionFilters] = useState([]);
   // const [dataCollectors, setDataCollectors] = useState([]);
   // const [nfts, setNfts] = useState([]);
   // const [productData, setProductData] = useState([]);
@@ -68,12 +70,20 @@ export default function Index() {
     setTrendingFilters(filters.sort);
   }, []);
 
+  // top collectors
   useEffect(async () => {
     const data = await getData("top-collectors");
     setCollectors(data.users);
     setCollectorFilters(data.filters.sort);
-    console.log(data);
-  });
+  }, []);
+
+  // auctions
+  useEffect(async () => {
+    const data= await getData("live-auctions");
+    setAuctions(data.nfts);
+    setAuctionFilters(data.filters.price);
+    
+  }, [])
 
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
@@ -83,6 +93,7 @@ export default function Index() {
       <Featured items={featuredCards} />
       <Trending cards={trendingItems} filters={trendingFilters} />
       <TopCollectors collectors={collectors} filters={collectorFilters}/>
+      <Auctions cards={auctions} filters={auctionFilters}/>
     </div>
   );
 }

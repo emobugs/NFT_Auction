@@ -2,13 +2,12 @@ import styles from "./TopCollectors.module.scss";
 import { Select, MenuItem, Container, Grid } from "@mui/material";
 import CollectorColumn from "./CollectorColumn";
 
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import _ from "lodash";
 export default function TopCollectors({ collectors = [], filters=[] }) {
   collectors.map((item, index) => (item.id = index + 1));
 
-  const [selectValue, setSelectValue] = useState(1);
-
+  const [selectValue, setSelectValue] = useState('asc');
 
   const handleChange=(e)=>{
     setSelectValue(e.target.value);
@@ -19,13 +18,14 @@ export default function TopCollectors({ collectors = [], filters=[] }) {
         <div className={styles.top}>
           <h1 className={styles.title}>Top Collectors</h1>
           <Select
+          defaultValue=""
             value={selectValue}
             onChange={handleChange}
             className={styles.select}
           >
-            {filters.map(f => {
+            {filters.map((f,i) => {
               return (
-                <MenuItem label={f.label} value={f.value}>{f.label}
+                <MenuItem label={f.label} value={f.value} key={i}>{f.label} 
                 </MenuItem>
               )
             })}

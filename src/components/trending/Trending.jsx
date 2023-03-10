@@ -18,6 +18,7 @@ export default function Trending({ filters = {}, cards = [] }) {
         {/* Select component */}
         {/* <FormControl sx={{ width: "100%", marginLeft: "auto" }}> */}
         <Select
+          defaultValue={1}
           value={selectSort}
           className={styles.select}
           onChange={handleChange}
