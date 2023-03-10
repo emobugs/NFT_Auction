@@ -11,12 +11,16 @@ import { useState, useEffect } from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function ActivityFilters({ filters = [] }) {
-  const [filter, setFilter] = useState([]);
-  const [filterSort, setFilterSort] = useState([]);
+export default function ActivityFilters({ filters = {} }) {
+  const [sortSelect, setSortSelect] = useState('');
+  const [typeSelect, setTypeSelect] = useState('');
 
-  const handleChange = (event) => {
-    setFilter(event.target.value);
+  const handleSortChange = (e) => {
+    setSortSelect(e.target.value);
+  };
+
+  const handleTypeChange = (e) => {
+    setTypeSelect(e.target.value);
   };
 
   return (
@@ -25,41 +29,45 @@ export default function ActivityFilters({ filters = [] }) {
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="select-sort-label">Sort by</InputLabel>
           <Select
+          defaultValue=""
             className={styles["select-sort"]}
-            labelId="select-sort-label"
-            id="select-sort"
-            value={filter}
-            onChange={handleChange}
-            variant='outlined'
-            color='primary'
-            input={<OutlinedInput label="Sort by" />}
+            value={sortSelect}
+            onChange={handleSortChange}
           >
-            {/* {filterSort && generateSortItems} */}
+            {Array.isArray(filters.sort) &&
+              filters.sort.map((s, i) => (
+                <MenuItem label={s.label} value={s.value} key={i}>
+                  {s.label}
+                </MenuItem>
+              ))}
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="select-type-label">Type</InputLabel>
           <Select
+          defaultValue=""
             className={styles["select-type"]}
-            labelId="select-type-label"
-            id="select-type"
-            value={filter}
-            onChange={handleChange}
-            variant='outlined'
-            color='primary'
-            input={<OutlinedInput label="Type" />}
+            value={typeSelect}
+            onChange={handleTypeChange}
           >
-            {/* {filterSort && generateSortItems} */}
+             {Array.isArray(filters.sort) &&
+              filters.type.map((s, i) => (
+                <MenuItem label={s.label} value={s.value} key={i}>
+                  {s.label}
+                </MenuItem>
+              ))}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, width: 300}}>
+        <FormControl sx={{ m: 1, width: 300 }}>
           <TextField
             id="search-collections"
             className={styles["search-input"]}
             variant="standard"
-            sx={{ "& .MuiInputBase-root": {
-              height: '100%'
-          }}}
+            sx={{
+              "& .MuiInputBase-root": {
+                height: "100%",
+              },
+            }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
