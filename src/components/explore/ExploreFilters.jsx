@@ -12,11 +12,14 @@ import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 export default function ExploreFilters({ filters = [] }) {
-  const [filter, setFilter] = useState([]);
-  const [filterSort, setFilterSort] = useState([]);
+  const [sortSelected, setSortSelected] = useState("");
+  const [priceSelected, setPriceSelected] = useState("");
+  const handleSortChange = (event) => {
+    setSortSelected(event.target.value);
+  };
 
-  const handleChange = (event) => {
-    setFilter(event.target.value);
+  const handlePriceChange = (event) => {
+    setPriceSelected(event.target.value);
   };
 
   return (
@@ -25,39 +28,41 @@ export default function ExploreFilters({ filters = [] }) {
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="select-sort-label">Sort by</InputLabel>
           <Select
+            defaultValue=""
             className={styles["select-sort"]}
-            labelId="select-sort-label"
-            id="select-sort"
-            value={filter}
-            onChange={handleChange}
-            variant="outlined"
-            color="primary"
-            input={<OutlinedInput label="Sort by" />}
-          >
-            
-            <MenuItem value="Day">Day</MenuItem>
-            <MenuItem value="Week">Week</MenuItem>
-            <MenuItem value="Month">Month</MenuItem>
-           
-            {/* {filterSort && generateSortItems} */}
+            value={sortSelected}
+            onChange={handleSortChange}
+          >{Array.isArray(filters['sort']) &&
+              filters.sort.map((s, i) => {
+                return (
+                  <MenuItem label={s.label} value={s.value} key={i}>
+                    {s.label}
+                  </MenuItem>
+                );
+              })}
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="select-price-label">Price range</InputLabel>
           <Select
+            defaultValue=""
             className={styles["select-type"]}
             labelId="select-price-label"
             id="select-price"
-            value={filter}
-            onChange={handleChange}
+            value={priceSelected}
+            onChange={handlePriceChange}
             variant="outlined"
             color="primary"
             input={<OutlinedInput label="Price" />}
           >
-            {/* {filterSort && generateSortItems} */}
-            <MenuItem value="100-200">100-200</MenuItem>
-            <MenuItem value="200-500">200-500</MenuItem>
-            <MenuItem value="500-1000">500-1000</MenuItem>
+            {/* {Array.isArray(filters.price) && filters.price.map( => {})} */}
+            {/* {console.log(typeof filters.price, Array.isArray(filters.price))} */}
+            {Array.isArray(filters.price) &&
+              filters.price.map((s, i) => (
+                <MenuItem label={s.label} value={s.value} key={i}>
+                  {s.label}
+                </MenuItem>
+              ))}
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, width: 300 }}>

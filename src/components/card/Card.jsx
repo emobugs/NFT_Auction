@@ -1,7 +1,7 @@
 import styles from "./Card.module.scss";
 import { useState, useEffect } from "react";
 
-import { Card as CardMui, Chip } from "@mui/material";
+import { Card as CardMui, Chip, Grid} from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
@@ -53,27 +53,33 @@ export default function Card({
 
   return (
     <CardMui className={liveClass}>
-      <Avatar url={user.avatar.url} className={styles.avatar} verified={user.verified}/>
+      <Avatar
+        url={user.avatar.url}
+        className={styles.avatar}
+        verified={user.verified}
+      />
       {/* Live or normal card */}
       {timeLeft ? (
         liveBadge
       ) : (
         <img src={mediaUrl} alt="NFT image" className={styles.media} />
       )}
-      <div className={styles.info}>
-        <div className={styles["basic-info"]}>
+      <Grid container className={styles.info}>
+        <Grid container direction='column' item md={8} className={styles["basic-info"]}>
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.price}>
             ~{price.toFixed(1)} {currency}
           </p>
-        </div>
-        <Chip
-          className={styles.likes}
-          icon={<FavoriteIcon className={styles['likes-icon']}/>}
-          variant="outlined"
-          label={millify(likes)}
-        />
-      </div>
+        </Grid>
+        <Grid item md={3}>
+          <Chip
+            className={styles.likes}
+            icon={<FavoriteIcon className={styles["likes-icon"]} />}
+            variant="outlined"
+            label={millify(likes)}
+          />
+        </Grid>
+      </Grid>
     </CardMui>
   );
 }

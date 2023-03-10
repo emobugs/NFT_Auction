@@ -43,10 +43,7 @@ export default function Index() {
   const [collectorFilters, setCollectorFilters] = useState([]);
   const[auctions, setAuctions] = useState([]);
   const [auctionFilters, setAuctionFilters] = useState([]);
-  // const [dataCollectors, setDataCollectors] = useState([]);
-  // const [nfts, setNfts] = useState([]);
-  // const [productData, setProductData] = useState([]);
-  // const [filtersProfile, setFiltersProfile] = useState([]);
+
   async function getData(component) {
     const result = await fetch(`${process.env.apiUrl}/${component}`);
     const response = await result.json();
@@ -85,6 +82,7 @@ export default function Index() {
     
   }, [])
 
+
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
   // date = [2023, 1, 24, 23, 46, 5];
@@ -94,6 +92,7 @@ export default function Index() {
       <Trending cards={trendingItems} filters={trendingFilters} />
       <TopCollectors collectors={collectors} filters={collectorFilters}/>
       <Auctions cards={auctions} filters={auctionFilters}/>
+
     </div>
   );
 }
