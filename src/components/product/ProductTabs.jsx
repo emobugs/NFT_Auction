@@ -56,12 +56,14 @@ export default function ProductTabs({ text, bids }) {
                     [styles[`table-row-${i}`]]: true,
                     [styles[EvenOrOdd(i)]] : true 
                   })}
+                  key={i}
                   >
                     <TableCell>
                       <User
                         name={name}
                         avatar={avatar}
                         verified={verified}
+                        key={i}
                       ></User>
                     </TableCell>
                     <TableCell>{amount}</TableCell>
