@@ -6,10 +6,22 @@ import Card from "../../src/components/card/Card";
 
 import styles from "./index.module.scss";
 import { Container, Grid } from "@mui/material";
-
-import nftCards from "../../data/nfts.json";
+import { useState, useEffect } from "react";
 
 export default function index() {
+  const [nfts, setNfts] = useState([]);
+  const [nftFilters, setNftFilters] = useState([]);
+
+
+  useEffect(async() =>{
+    const response = await fetch(`${process.env.apiUrl}/explore`);
+    const result = await response.json();
+    const nfts = await result.nfts;
+    const filters = await result.filters;
+    setNfts(nfts);
+    setNftFilters(filters);
+  }, [])
+
   return (
     <div>
       <Header />
@@ -19,11 +31,11 @@ export default function index() {
             <ExploreTitle text="Explore" />
           </Grid>
           <Grid item md={9}>
-            <ExploreFilters />
+            <ExploreFilters filters={nftFilters} />
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          {nftCards.map((card, i) => {
+          {nfts.map((card, i) => {
             return (
               <Grid item key={i} md={3}>
                 <Card
