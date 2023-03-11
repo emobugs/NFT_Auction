@@ -1,7 +1,5 @@
 import { useRouter } from "next/dist/client/router";
 
-import dataNfts from "../../../data/nfts.json";
-
 import { useEffect, useState } from "react";
 
 import Header from "../../../src/components/header/Header";
