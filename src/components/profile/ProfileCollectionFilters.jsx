@@ -23,15 +23,17 @@ const names = [
   "Virginia Andrews",
   "Kelly Snyder",
 ];
-export default function ProfileCollectionFilters({ filters = [] }) {
-  const [personName, setPersonName] = useState([]);
-  const [filterSort, setFilterSort] = useState([]);
+export default function ProfileCollectionFilters({ filters = {} }) {
+  const [sortSelect, setSortSelect] = useState('');
+  const [priceSelect, setPriceSelect] = useState('');
 
-  const handleChange = (event) => {
-    setPersonName(event.target.value);
+  const handleSortChange = (event) => {
+    setSortSelect(event.target.value);
   };
 
-
+  const handlePriceChange = (event) => {
+    setPriceSelect(event.target.value);
+  };
 
   return (
     <div className={styles["profile-collection-filters"]}>
@@ -39,30 +41,36 @@ export default function ProfileCollectionFilters({ filters = [] }) {
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="demo-multiple-name-label">Sort by</InputLabel>
           <Select
+            defaultValue=""
             className={styles["select-sort"]}
-            labelId="demo-multiple-name-label"
-            id="demo-multiple-name"
-            value={personName}
-            onChange={handleChange}
-            input={<OutlinedInput label="Name" />}
+            value={sortSelect}
+            onChange={handleSortChange}
           >
-            {/* {filterSort && generateSortItems} */}
+            {Array.isArray(filters.sort) &&
+              filters.sort.map((s, i) => (
+                <MenuItem label={s.label} value={s.value} key={i}>
+                  {s.label}
+                </MenuItem>
+              ))}
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="demo-multiple-name-label">Price range</InputLabel>
           <Select
+            defaultValue=""
             className={styles["price-sort"]}
-            labelId="demo-multiple-name-label"
-            id="demo-multiple-name"
-            value={personName}
-            onChange={handleChange}
-            input={<OutlinedInput label="Name" />}
+            value={priceSelect}
+            onChange={handlePriceChange}
           >
-            {/* {filterSort && generateSortItems} */}
+            {Array.isArray(filters.price) &&
+              filters.sort.map((p, i) => (
+                <MenuItem label={p.label} value={p.value} key={i}>
+                  {p.label}
+                </MenuItem>
+              ))}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, width: 300}}>
+        <FormControl sx={{ m: 1, width: 300 }}>
           <TextField
             id="search-collections"
             className={styles["search-input"]}
