@@ -63,7 +63,7 @@ export default function ProfileCollectionFilters({ filters = {} }) {
             onChange={handlePriceChange}
           >
             {Array.isArray(filters.price) &&
-              filters.sort.map((p, i) => (
+              filters.price.map((p, i) => (
                 <MenuItem label={p.label} value={p.value} key={i}>
                   {p.label}
                 </MenuItem>
