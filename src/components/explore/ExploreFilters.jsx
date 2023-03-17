@@ -11,14 +11,16 @@ import { useState, useEffect } from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function ExploreFilters({ filters = [] }) {
+export default function ExploreFilters({ filters = [], sortNfts, priceRange }) {
   const [sortSelected, setSortSelected] = useState("");
   const [priceSelected, setPriceSelected] = useState("");
   const handleSortChange = (event) => {
+    sortNfts(event.target.value);
     setSortSelected(event.target.value);
   };
-
+  
   const handlePriceChange = (event) => {
+    priceRange(event.target.value);
     setPriceSelected(event.target.value);
   };
 
