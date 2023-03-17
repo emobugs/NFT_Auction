@@ -70,7 +70,7 @@ export default function ProfileCollectionFilters({ filters = {} }) {
               ))}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, width: 300 }}>
+        <FormControl sx={{ m: 1, width: 300, height: "100%" }}>
           <TextField
             id="search-collections"
             className={styles["search-input"]}
