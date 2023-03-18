@@ -24,18 +24,22 @@ export default function index() {
     setType(value);
   }
 
+  async function getData(){
+   return await (await (await fetch(`${process.env.apiUrl}/explore/?sort=${sort}&type=${type}`)).json());
+
+  }
+
   useEffect(async () => {
     const response = await fetch(`${process.env.apiUrl}/activities`);
     const data = await response.json();
 
     setActivity(data.activities);
     setActivityFilters(data.filters);
-  })
+  }, [])
 
   useEffect(async () => {
-    const result =  await fetch(`${process.env.apiUrl}/explore/?sort=${sort}&type=${type}`);
-    console.log(result)
-  }, [sort,type])
+    const result = await getData()
+  }, [sortHandler, typeHandler])
 
   return (
     <div className={styles["wrapper"]}>
