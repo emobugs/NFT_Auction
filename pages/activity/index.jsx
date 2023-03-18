@@ -25,7 +25,7 @@ export default function index() {
 
   async function getData() {
     return await await (
-      await fetch(`${process.env.apiUrl}/activities/?sort=${sort}&type=${type}`)
+      await fetch(`${process.env.apiUrl}/activities/?type=${type}`)
     ).json();
   }
 
@@ -40,7 +40,7 @@ export default function index() {
   useEffect(async () => {
     const result = await getData();
     console.log(result);
-  }, [sortHandler, typeHandler]);
+  }, [typeHandler]);
 
   return (
     <div className={styles["wrapper"]}>
