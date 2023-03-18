@@ -11,16 +11,18 @@ import { useState, useEffect } from "react";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function ActivityFilters({ filters = {} }) {
+export default function ActivityFilters({ filters = {}, sortHandler, typeHandler }) {
   const [sortSelect, setSortSelect] = useState('');
   const [typeSelect, setTypeSelect] = useState('');
 
   const handleSortChange = (e) => {
     setSortSelect(e.target.value);
+    sortHandler(e.target.value)
   };
-
+  
   const handleTypeChange = (e) => {
     setTypeSelect(e.target.value);
+    typeHandler(e.target.value)
   };
 
   return (
