@@ -5,11 +5,12 @@ import Card from "../card/Card";
 
 import { useState} from "react";
 
-export default function Auctions({ cards = [], filters = [] }) {
+export default function Auctions({ cards = [], filters = [], auctionsFilterHandle }) {
   const [priceFilter, setPriceFilter] = useState(1);
 
   const handleChange = (e) => {
     setPriceFilter(e.target.value);
+    auctionsFilterHandle(e.target.value);
   };
 
   return (

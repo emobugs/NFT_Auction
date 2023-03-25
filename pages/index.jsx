@@ -48,6 +48,7 @@ export default function Index() {
 
   const [auctions, setAuctions] = useState([]);
   const [auctionFilters, setAuctionFilters] = useState([]);
+  const [auctionsFilterValue, setAuctionsFilterValue] = useState("");
 
   async function getData(component) {
     const result = await fetch(`${process.env.apiUrl}/${component}`);
@@ -85,7 +86,7 @@ export default function Index() {
   }, []);
 
   // add requests by filters to Trending component
-//////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////
   const trendingFilterHandle = (value) => {
     setTrendingFilterValue(value);
   };
@@ -93,20 +94,29 @@ export default function Index() {
   useEffect(async () => {
     const data = await getData(`trending?sort=${trendingFilterValue}`);
   }, [trendingFilterValue]);
-//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////
 
   //add requests by filters in Top Collectors component
-/////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
   const collectorsFilterHandle = (value) => {
     setCollectorsFilterValue(value);
-    console.log(value)
+    console.log(value);
   };
   useEffect(async () => {
     const data = await getData(`trending?sort=${collectorsFilterValue}`);
-    console.log(data);
   }, [collectorsFilterValue]);
-/////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////
 
+  //add requests by filters in Live Auctions component
+  /////////////////////////////////////////////////////////
+  const auctionsFilterHandle = (value) => {
+    setCollectorsFilterValue(value);
+    console.log(value);
+  };
+  useEffect(async () => {
+    const data = await getData(`live-auctions?sort=${auctionsFilterValue}`);
+  }, [auctionsFilterValue]);
+  /////////////////////////////////////////////////////////////////////
 
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
@@ -124,7 +134,11 @@ export default function Index() {
         filters={collectorFilters}
         collectorsFilterHandle={collectorsFilterHandle}
       />
-      <Auctions cards={auctions} filters={auctionFilters} />
+      <Auctions
+        cards={auctions}
+        filters={auctionFilters}
+        auctionsFilterHandle={auctionsFilterHandle}
+      />
     </div>
   );
 }
