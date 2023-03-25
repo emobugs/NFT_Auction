@@ -37,10 +37,14 @@ import ExploreFilters from "../src/components/explore/ExploreFilters";
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
+
   const [trendingItems, setTrendingItems] = useState([]);
   const [trendingFilters, setTrendingFilters] = useState([]);
+  const [trendingFilterValue, setTrendingFilterValue] = useState('');
+
   const [collectors, setCollectors] = useState([]);
   const [collectorFilters, setCollectorFilters] = useState([]);
+
   const [auctions, setAuctions] = useState([]);
   const [auctionFilters, setAuctionFilters] = useState([]);
 
@@ -79,13 +83,25 @@ export default function Index() {
     setAuctionFilters(data.filters);
   }, []);
 
+  // add requests by filters to Trending component
+  const trendingFilterHandle = (value) => {
+    console.log(value);
+    setTrendingFilterValue(value);
+  }
+
+  // fetch again on filters change
+  useEffect(async () => {
+    const data = await getData(`trending?sort=${trendingFilterValue}`)
+    console.log(data);
+  },[trendingFilterValue])
+
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
   // date = [2023, 1, 24, 23, 46, 5];
   return (
     <div>
       <Featured items={featuredCards} />
-      <Trending cards={trendingItems} filters={trendingFilters} />
+      <Trending cards={trendingItems} filters={trendingFilters} trendingFilterHandle={trendingFilterHandle} />
       <TopCollectors collectors={collectors} filters={collectorFilters} />
       <Auctions cards={auctions} filters={auctionFilters} />
     </div>

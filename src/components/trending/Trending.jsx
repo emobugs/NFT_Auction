@@ -4,19 +4,18 @@ import { useState, useEffect, useRef } from "react";
 import { Container, Grid, MenuItem, Select } from "@mui/material";
 import Card from "../card/Card";
 
-export default function Trending({ filters = {}, cards = [] }) {
+export default function Trending({ filters = {}, cards = [], trendingFilterHandle }) {
   const [selectSort, setSelectSort] = useState(1);
 
   const handleChange = (e) => {
     setSelectSort(e.target.value);
+    trendingFilterHandle(e.target.value)
   };
 
   return (
     <Container className={styles.container} maxWidth={false}>
       <div className={styles.top}>
         <h2 className={styles.heading}>Trending</h2>
-        {/* Select component */}
-        {/* <FormControl sx={{ width: "100%", marginLeft: "auto" }}> */}
         <Select
           defaultValue={1}
           value={selectSort}
@@ -31,8 +30,6 @@ export default function Trending({ filters = {}, cards = [] }) {
             );
           })}
         </Select>
-        {/* </FormControl> */}
-        {/* </Grid> */}
       </div>
       <Grid container className={styles["cards-cnt"]}>
         {cards.map((card, i) => {
