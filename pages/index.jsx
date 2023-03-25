@@ -40,10 +40,11 @@ export default function Index() {
 
   const [trendingItems, setTrendingItems] = useState([]);
   const [trendingFilters, setTrendingFilters] = useState([]);
-  const [trendingFilterValue, setTrendingFilterValue] = useState('');
+  const [trendingFilterValue, setTrendingFilterValue] = useState("");
 
   const [collectors, setCollectors] = useState([]);
   const [collectorFilters, setCollectorFilters] = useState([]);
+  const [collectorsFilterValue, setCollectorsFilterValue] = useState("");
 
   const [auctions, setAuctions] = useState([]);
   const [auctionFilters, setAuctionFilters] = useState([]);
@@ -84,16 +85,28 @@ export default function Index() {
   }, []);
 
   // add requests by filters to Trending component
+//////////////////////////////////////////////////////////////
   const trendingFilterHandle = (value) => {
-    console.log(value);
     setTrendingFilterValue(value);
-  }
-
+  };
   // fetch again on filters change
   useEffect(async () => {
-    const data = await getData(`trending?sort=${trendingFilterValue}`)
+    const data = await getData(`trending?sort=${trendingFilterValue}`);
+  }, [trendingFilterValue]);
+//////////////////////////////////////////////////////////
+
+  //add requests by filters in Top Collectors component
+/////////////////////////////////////////////////////////
+  const collectorsFilterHandle = (value) => {
+    setCollectorsFilterValue(value);
+    console.log(value)
+  };
+  useEffect(async () => {
+    const data = await getData(`trending?sort=${collectorsFilterValue}`);
     console.log(data);
-  },[trendingFilterValue])
+  }, [collectorsFilterValue]);
+/////////////////////////////////////////////////////////////////////
+
 
   // let date;
   // date  = '2023-02-25T20:39:40.000Z';
@@ -101,8 +114,16 @@ export default function Index() {
   return (
     <div>
       <Featured items={featuredCards} />
-      <Trending cards={trendingItems} filters={trendingFilters} trendingFilterHandle={trendingFilterHandle} />
-      <TopCollectors collectors={collectors} filters={collectorFilters} />
+      <Trending
+        cards={trendingItems}
+        filters={trendingFilters}
+        trendingFilterHandle={trendingFilterHandle}
+      />
+      <TopCollectors
+        collectors={collectors}
+        filters={collectorFilters}
+        collectorsFilterHandle={collectorsFilterHandle}
+      />
       <Auctions cards={auctions} filters={auctionFilters} />
     </div>
   );

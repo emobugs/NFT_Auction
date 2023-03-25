@@ -4,13 +4,14 @@ import CollectorColumn from "./CollectorColumn";
 
 import {useState} from 'react';
 import _ from "lodash";
-export default function TopCollectors({ collectors = [], filters=[] }) {
+export default function TopCollectors({ collectors = [], filters=[], collectorsFilterHandle }) {
   collectors.map((item, index) => (item.id = index + 1));
 
-  const [selectValue, setSelectValue] = useState('asc');
+  const [selectValue, setSelectValue] = useState('');
 
   const handleChange=(e)=>{
     setSelectValue(e.target.value);
+    collectorsFilterHandle(e.target.value);
   }
 
   return (
@@ -18,8 +19,8 @@ export default function TopCollectors({ collectors = [], filters=[] }) {
         <div className={styles.top}>
           <h1 className={styles.title}>Top Collectors</h1>
           <Select
-          defaultValue=""
-            value={selectValue}
+          defaultValue="asc"
+            value={selectValue || 'asc'}
             onChange={handleChange}
             className={styles.select}
           >
